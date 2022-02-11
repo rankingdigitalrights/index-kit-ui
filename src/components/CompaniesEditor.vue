@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { Company } from '../entities/Company';
 import CompanyComponent from './CompanyComponent.vue'
+import fileDownload from 'js-file-download'
 // import { useMessage } from 'naive-ui'
 
 const formRef = ref(null)
@@ -16,7 +17,7 @@ const outputJson = computed({
 
 function addCompany() {
   companies.value.push(new Company({
-    id: `${companies.value.length}`,
+    id: `c${companies.value.length + 1}`,
     name: '',
     group: '',
     type: 'telecom',
@@ -27,10 +28,17 @@ function addCompany() {
 function removeCompany(i: number) {
   companies.value.splice(i, 1)
 }
+
+function downloadJson() {
+  fileDownload(outputJson.value, 'companies.json', 'text/plain')
+}
 </script>
 
 <template>
   <company-component v-for="(comp, indx) in companies" @close="removeCompany(indx)" :key="indx" :company="comp"></company-component>
   <n-button @click="addCompany">Add company</n-button>
   <n-input v-model:value="outputJson" type="textarea" style="font-family: monospace,monospace;" />
+  <n-space>
+    <n-button type="primary" @click="downloadJson">Download JSON</n-button>
+  </n-space>
 </template>

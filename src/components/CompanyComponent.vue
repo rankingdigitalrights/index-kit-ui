@@ -22,19 +22,36 @@ const model = computed({
 })
 
 const formRef = ref(null)
-const companyTypes = ["telecom", "internet"].map(
-  (v) => ({
-    label: v,
-    value: v
-  })
-)
+const companyTypes = [
+  { value: 'telecom', label: 'Telecom company' },
+  { value: 'internet', label: 'Internet platform' }
+]
+const serviceTypes = [
+  { value: 'mobile', label: 'Prepaid and postpaid mobile' },
+  { value: 'broadband', label: 'Fixed-line broadband' },
+  { value: 'cloud', label: 'Cloud service' },
+  { value: 'eCommerce', label: 'eCommerce' },
+  { value: 'email', label: 'Email' },
+  { value: 'messagingVoip', label: 'Messaging & VoIP' },
+  { value: 'mobileEcosystem', label: 'Mobile ecosystem' },
+  { value: 'pda', label: 'Personal digital assistant ecosystem' },
+  { value: 'photoVideo', label: 'Video & photo sharing' },
+  { value: 'search', label: 'Search engine' },
+  { value: 'socialNetworkBlogs', label: 'Social networking & blog' },
+  { value: 'other', label: 'Other type of service' }
+]
+const serviceSubtypes = [
+  { value: null, label: 'None' },
+  { value: 'prepaid', label: 'Prepaid Service' },
+  { value: 'postpaid', label: 'Postpaid Service' }
+]
 
 function onCreate() {
   return new Service({
-    id: '1',
+    id: model.value.id + 's' + (model.value.services.length + 1),
     name: 'Service Name',
-    type: 'mobile',
-    subtype: 'prepaid'
+    type: 'other',
+    subtype: null
   })
 }
 
@@ -51,7 +68,7 @@ function handleClose() {
     require-mark-placement="right-hanging"
     label-width="auto"
     :style="{
-      maxWidth: '640px'
+      maxWidth: '800px'
     }"
   >
     <n-form-item label="Company ID">
@@ -75,6 +92,16 @@ function handleClose() {
       >
         <n-input v-model:value="value.id" type="text" />
         <n-input v-model:value="value.label.current" type="text" />
+        <n-select
+          v-model:value="value.type"
+          :options="serviceTypes"
+          placeholder="Service type"
+        />
+        <n-select
+          v-model:value="value.subtype"
+          :options="serviceSubtypes"
+          placeholder="Service sub-type"
+        />
       </n-dynamic-input>
     </n-form-item>
   </n-form>

@@ -9,6 +9,7 @@
     "format": "prettier --write src/**/*.{ts,vue,d.ts}"
   },
   "dependencies": {
+    "js-file-download": "^0.4.12",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.2"

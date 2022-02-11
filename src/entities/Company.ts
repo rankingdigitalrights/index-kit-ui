@@ -13,8 +13,6 @@ export class Company {
   public hasOpCom: boolean
   public opComLabel: string | null
   public tabPrevYearsOutcome: string | null
-  public urlCurrentDataCollectionSheet: string | null
-  public urlCurrentCompanyScoringSheet: string | null
   public services: Array<Service>
 
   constructor(
@@ -42,8 +40,6 @@ export class Company {
       this.opComLabel = null
     }
     this.tabPrevYearsOutcome = null
-    this.urlCurrentCompanyScoringSheet = null
-    this.urlCurrentDataCollectionSheet = null
     this.services = []
   }
 
