@@ -13,6 +13,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:rankingdigitalrights/index-kit-ui.git main:gh-pages
+git push
 
 cd -

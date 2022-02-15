@@ -2,7 +2,7 @@
 
 // https://www.thisdot.co/blog/computing-application-state-in-vue-3
 
-import { computed, ref } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 import { Company } from '../entities/Company'
 import { Service } from '../entities/Service';
 
@@ -58,6 +58,11 @@ function onCreate() {
 function handleClose() {
   emit('delete:company')
 }
+
+watchEffect(() => {
+  model.value.groupLabel = model.value.label.current
+  model.value.hasOpCom = Boolean(model.value.opComLabel)
+})
 </script>
 
 <template>
@@ -76,6 +81,9 @@ function handleClose() {
     </n-form-item>
     <n-form-item label="Company name">
       <n-input v-model:value="model.label.current" placeholder="ACME" />
+    </n-form-item>
+    <n-form-item label="Operation Company">
+      <n-input v-model:value="model.opComLabel" placeholder="No operation company" />
     </n-form-item>
     <n-form-item label="Type">
       <n-select
