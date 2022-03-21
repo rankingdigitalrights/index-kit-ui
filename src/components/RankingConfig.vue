@@ -85,9 +85,9 @@ function downloadJson() {
     </n-form-item>
     <n-form-item :span="14" label="Indicators" path="transferValue">
       <n-transfer
+        v-model:value="model.indicators"
         source-title="Excluded"
         target-title="Included"
-        v-model:value="model.indicators"
         :options="indicatorOptions"
       />
     </n-form-item>

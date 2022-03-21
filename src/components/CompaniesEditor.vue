@@ -5,7 +5,6 @@ import CompanyComponent from './CompanyComponent.vue'
 import fileDownload from 'js-file-download'
 // import { useMessage } from 'naive-ui'
 
-const formRef = ref(null)
 // const message = useMessage()
 const companies = ref(Array<Company>())
 const outputJson = computed({
@@ -35,7 +34,11 @@ function downloadJson() {
 </script>
 
 <template>
-  <company-component v-for="(comp, indx) in companies" @close="removeCompany(indx)" :key="indx" :company="comp"></company-component>
+  <company-component
+    v-for="(comp, indx) in companies"
+    :key="indx" :company="comp"
+    @close="removeCompany(indx)"
+  ></company-component>
   <n-button @click="addCompany">Add company</n-button>
   <n-input v-model:value="outputJson" type="textarea" style="font-family: monospace,monospace;" />
   <n-space>

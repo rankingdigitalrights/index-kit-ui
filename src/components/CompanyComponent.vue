@@ -66,7 +66,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <n-card closable @close="handleClose" :title="model.label.current">
+  <n-card closable :title="model.label.current" @close="handleClose">
   <n-form
     ref="formRef"
     label-placement="left"
@@ -87,8 +87,8 @@ watchEffect(() => {
     </n-form-item>
     <n-form-item label="Type">
       <n-select
-        placeholder="Select"
         v-model:value="model.type"
+        placeholder="Select"
         :options="companyTypes"
       />
     </n-form-item>
