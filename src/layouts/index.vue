@@ -1,9 +1,14 @@
 <template>
   <n-layout position="absolute" has-sider>
     <n-layout-sider>
-      <router-link to="/" custom>
-        <img src="../assets/logo.png" style="max-width: 80%">
-      </router-link>
+      <div class="logo" style="padding: 24px;">
+        <n-tag size="large" :bordered="false">
+          RDR Toolkit
+          <template #avatar>
+            <n-avatar :src="logoImg" />
+          </template>
+        </n-tag>
+      </div>
       <n-menu :options="menuOptions" />
     </n-layout-sider>
     <n-layout>
@@ -16,6 +21,7 @@
 
 import { h } from 'vue'
 import { RouterLink } from 'vue-router'
+import logoImg from "../assets/logo-square.png"
 
 const menuOptions = [
   {
@@ -53,7 +59,7 @@ const menuOptions = [
             name: 'ranking',
           }
         },
-        { default: () => 'Configure ranking' }
+        { default: () => 'Ranking editor' }
       ),
     key: 'go-ranking'
   },
@@ -66,7 +72,7 @@ const menuOptions = [
             name: 'company',
           }
         },
-        { default: () => 'About company' }
+        { default: () => 'Companies editor' }
       ),
     key: 'go-company'
   }
