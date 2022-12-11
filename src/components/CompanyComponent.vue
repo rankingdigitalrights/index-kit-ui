@@ -2,7 +2,7 @@
 // https://www.thisdot.co/blog/computing-application-state-in-vue-3
 
 import { computed, ref, watchEffect } from 'vue';
-import { Company } from '../entities/Company';
+import type { Company } from '../entities/Company';
 import { Service } from '../entities/Service';
 
 const props = defineProps<{
