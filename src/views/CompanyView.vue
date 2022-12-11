@@ -4,5 +4,5 @@
 </template>
 
 <script setup lang="ts">
-import CompaniesEditor from "../components/CompaniesEditor.vue"
+import CompaniesEditor from '../components/CompaniesEditor.vue';
 </script>

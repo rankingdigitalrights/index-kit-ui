@@ -58,3 +58,17 @@ $secondary: #1c5275;
 h1, h2, h3, h4, h5, h6 {
   color: $secondary;
 }
+
+
+// Layout helpers, used in layouts, references are used in the views files.
+
+.layout-line{
+  min-height: 250px;
+  height: 100%;
+  background-color: #eb6a5b;
+}
+
+.section-content {
+  padding: 0 30px 50px 30px;
+  margin: 0 auto;
+}

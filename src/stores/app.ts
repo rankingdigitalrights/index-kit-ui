@@ -1,7 +1,7 @@
-import { ref, type Ref } from "vue";
-import { defineStore } from "pinia";
+import { ref, type Ref } from 'vue';
+import { defineStore } from 'pinia';
 
-export const useAppStore = defineStore("app", () => {
+export const useAppStore = defineStore('app', () => {
   const showHelpSider: Ref<boolean> = ref(false);
 
   function toggleHelpSider() {
