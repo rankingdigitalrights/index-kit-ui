@@ -58,5 +58,4 @@ onBeforeRouteLeave((to, from, next) => {
     },
   });
 });
-
 </script>

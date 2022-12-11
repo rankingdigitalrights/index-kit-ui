@@ -1,4 +1,4 @@
-import { Service } from "./Service";
+import type { Service } from './Service';
 
 export class Company {
   public id: string;
@@ -7,7 +7,7 @@ export class Company {
     altFilename: string | null;
     legacy: Array<string>;
   };
-  public type: "telecom" | "internet";
+  public type: 'telecom' | 'internet';
   public groupLabel: string;
   public hasOpCom: boolean;
   public opComLabel: string | null;
@@ -18,7 +18,7 @@ export class Company {
     id: string;
     name: string;
     group: string;
-    type: "telecom" | "internet";
+    type: 'telecom' | 'internet';
     operationCompany: string | null;
   }) {
     this.id = params.id;

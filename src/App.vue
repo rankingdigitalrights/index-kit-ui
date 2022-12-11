@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import DefaultLayout from "./layouts/DefaultLayout.vue";
-import type { GlobalThemeOverrides } from "naive-ui";
+import DefaultLayout from './layouts/DefaultLayout.vue';
+import type { GlobalThemeOverrides } from 'naive-ui';
 
 const themeOverrides: GlobalThemeOverrides = {
   common: {
     fontFamily:
       '"Poppins", v-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     fontFamilyMono:
-      "v-mono, SFMono-Regular, Menlo, Consolas, Courier, monospace",
+      'v-mono, SFMono-Regular, Menlo, Consolas, Courier, monospace',
   },
   Menu: {
-    itemColorHover: "rgba(255, 255, 255, 0)",
-    itemTextColor: "#1c5275",
-    itemColorActive: "rgba(255, 255, 255, 0)",
-    itemColorActiveHover: "rgba(255, 255, 255, 0)",
+    itemColorHover: 'rgba(255, 255, 255, 0)',
+    itemTextColor: '#1c5275',
+    itemColorActive: 'rgba(255, 255, 255, 0)',
+    itemColorActiveHover: 'rgba(255, 255, 255, 0)',
     // itemTextColorActiveHover: "#eb6a5b",
-    itemTextColorActiveHover: "#1c5275",
+    itemTextColorActiveHover: '#1c5275',
     // itemTextColorActive: "#eb6a5b",
-    itemTextColorActive: "#1c5275",
-    itemTextColorHover: "#eb6a5b",
+    itemTextColorActive: '#1c5275',
+    itemTextColorHover: '#eb6a5b',
   },
 };
 </script>
@@ -39,5 +39,5 @@ const themeOverrides: GlobalThemeOverrides = {
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/main.scss";
+@import '@/assets/scss/main.scss';
 </style>

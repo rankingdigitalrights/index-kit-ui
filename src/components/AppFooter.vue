@@ -3,7 +3,6 @@
     <n-grid x-gap="12" :cols="2" style="height: 100%">
       <n-gi class="grid-item">
         <div>
-
           <a href="https://google.com" target="_blank">Privacy policy</a>
           <br />
           <p>
@@ -38,13 +37,13 @@
 </template>
 
 <script lang="ts" setup>
-import logoInvertedImg from "../assets/logo-inverted.png";
+import logoInvertedImg from '../assets/logo-inverted.png';
 import {
   Twitter,
   Linkedin,
   CreativeCommons,
   CreativeCommonsBy,
-} from "@vicons/fa";
+} from '@vicons/fa';
 </script>
 
 <style lang="scss" scoped>
@@ -57,9 +56,9 @@ import {
 }
 
 a {
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
-  &:hover{ 
+  &:hover {
     color: #eb6a5b;
   }
   // make a space but not for the first one

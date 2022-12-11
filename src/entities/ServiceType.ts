@@ -1,13 +1,13 @@
 export type ServiceType =
-  | "mobile"
-  | "broadband"
-  | "eCommerce"
-  | "pda"
-  | "mobileEcosystem"
-  | "messagingVoip"
-  | "cloud"
-  | "search"
-  | "socialNetworkBlogs"
-  | "photoVideo"
-  | "email"
-  | "other";
+  | 'mobile'
+  | 'broadband'
+  | 'eCommerce'
+  | 'pda'
+  | 'mobileEcosystem'
+  | 'messagingVoip'
+  | 'cloud'
+  | 'search'
+  | 'socialNetworkBlogs'
+  | 'photoVideo'
+  | 'email'
+  | 'other';

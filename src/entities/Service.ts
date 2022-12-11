@@ -1,9 +1,9 @@
-import type { ServiceType } from "./ServiceType";
+import type { ServiceType } from './ServiceType';
 
 export class Service {
   public id: string;
   public type: ServiceType;
-  public subtype: "prepaid" | "postpaid" | null;
+  public subtype: 'prepaid' | 'postpaid' | null;
   public label: {
     current: string;
     legacy: Array<string>;
@@ -13,7 +13,7 @@ export class Service {
     id: string;
     name: string;
     type: ServiceType;
-    subtype: "prepaid" | "postpaid" | null;
+    subtype: 'prepaid' | 'postpaid' | null;
   }) {
     this.id = params.id;
     this.label = {
