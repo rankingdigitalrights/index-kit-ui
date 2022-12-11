@@ -32,6 +32,7 @@ import { QuestionCircle } from '@vicons/fa';
 import { useDialog } from 'naive-ui';
 // import beforeRouterLeave
 import { onBeforeRouteLeave } from 'vue-router';
+
 const dialog = useDialog();
 
 const showHelpSider: Ref<boolean> = ref(false);

@@ -29,7 +29,10 @@
 import { ref, type Ref } from 'vue';
 import CompaniesEditor from '../components/CompaniesEditor.vue';
 import { QuestionCircle } from '@vicons/fa';
+import { useDialog } from 'naive-ui';
 import { onBeforeRouteLeave } from 'vue-router';
+
+const dialog = useDialog();
 
 const showHelpSider: Ref<boolean> = ref(false);
 const toggleHelp = () => {
