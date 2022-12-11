@@ -1,7 +1,7 @@
 {
-  "name": "rdr-index-kit-ui",
+  "name": "rdr-index-kit",
   "version": "1.0.0",
-  "description": "RDR Index Kit UI - A user interface to start your own ranking adaptation ",
+  "description": "RDR Index Kit - A user interface to start your own ranking adaptation ",
   "homepage": "https://github.com/rankingdigitalrights/index-kit-ui",
   "private": true,
   "maintainers": [
