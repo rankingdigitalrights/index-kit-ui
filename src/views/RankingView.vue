@@ -35,7 +35,11 @@ import { onBeforeRouteLeave } from 'vue-router';
 const dialog = useDialog();
 
 const showHelpSider: Ref<boolean> = ref(false);
+const toggleHelp = () => {
+  showHelpSider.value = !showHelpSider.value;
+};
 
+// Before leaving the route
 onBeforeRouteLeave((to, from, next) => {
   // if the user accepts to leave, close the help sider
   dialog.warning({
@@ -54,7 +58,4 @@ onBeforeRouteLeave((to, from, next) => {
   });
 });
 
-const toggleHelp = () => {
-  showHelpSider.value = !showHelpSider.value;
-};
 </script>
