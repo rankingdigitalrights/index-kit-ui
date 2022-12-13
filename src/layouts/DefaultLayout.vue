@@ -92,7 +92,8 @@ const menuOptions = [
   height: 120px;
 }
 .layout-top {
-  height: calc(100vh - 120px - 120px);
+  min-height: calc(100vh - 120px - 120px);
+  display: flex;
   box-sizing: border-box;
   // padding-top: 30px;
 }

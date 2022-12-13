@@ -62,6 +62,10 @@ h1, h2, h3, h4, h5, h6 {
 
 // Layout helpers, used in layouts, references are used in the views files.
 
+.n-layout-scroll-container {
+  height: auto !important;
+}
+
 .layout-line{
   min-height: 250px;
   height: 100%;
