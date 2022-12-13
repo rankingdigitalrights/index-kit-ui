@@ -34,7 +34,7 @@ const menuOptions = [
           },
           class: 'menu-link',
         },
-        { default: () => 'Go Home' }
+        { default: () => 'Home' }
       ),
     key: 'go-home',
   },
@@ -48,7 +48,7 @@ const menuOptions = [
           },
           class: 'menu-link',
         },
-        { default: () => 'About this' }
+        { default: () => 'About' }
       ),
     key: 'go-about',
   },
