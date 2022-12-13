@@ -2,12 +2,22 @@
 // https://www.thisdot.co/blog/computing-application-state-in-vue-3
 
 import { computed, ref, watchEffect } from 'vue';
+import {
+  NCard,
+  NForm,
+  NFormItem,
+  NInput,
+  NSelect,
+  NDynamicInput,
+} from 'naive-ui';
+
 import type { Company } from '../entities/Company';
 import { Service } from '../entities/Service';
 
 const props = defineProps<{
   company: Company;
 }>();
+
 const emit = defineEmits<{
   (e: 'update:company', value: Company): void;
   (e: 'delete:company'): void;
@@ -21,6 +31,7 @@ const model = computed({
 });
 
 const formRef = ref(null);
+
 const companyTypes = [
   { value: 'telecom', label: 'Telecom company' },
   { value: 'internet', label: 'Internet platform' },
@@ -39,8 +50,9 @@ const serviceTypes = [
   { value: 'socialNetworkBlogs', label: 'Social networking & blog' },
   { value: 'other', label: 'Other type of service' },
 ];
+
 const serviceSubtypes = [
-  { value: null, label: 'None' },
+  // { value: null, label: 'None' },
   { value: 'prepaid', label: 'Prepaid Service' },
   { value: 'postpaid', label: 'Postpaid Service' },
 ];

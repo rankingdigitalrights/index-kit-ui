@@ -29,7 +29,7 @@
 import { ref, type Ref } from 'vue';
 import RankingEditor from '../components/RankingEditor.vue';
 import { QuestionCircle } from '@vicons/fa';
-import { useDialog } from 'naive-ui';
+import { NLayoutContent, NLayoutSider, NIcon, useDialog } from 'naive-ui';
 // import beforeRouterLeave
 import { onBeforeRouteLeave } from 'vue-router';
 

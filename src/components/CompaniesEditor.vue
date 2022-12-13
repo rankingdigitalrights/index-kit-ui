@@ -3,6 +3,7 @@ import { computed, ref } from 'vue';
 import { Company } from '../entities/Company';
 import CompanyComponent from './CompanyComponent.vue';
 import fileDownload from 'js-file-download';
+import { NButton, NInput, NSpace } from 'naive-ui';
 // import { useMessage } from 'naive-ui'
 
 // const message = useMessage()

@@ -37,13 +37,14 @@
 </template>
 
 <script lang="ts" setup>
-import logoInvertedImg from '../assets/logo-inverted.png';
+import { NGrid, NGi, NIcon, NImage } from 'naive-ui';
 import {
   Twitter,
   Linkedin,
   CreativeCommons,
   CreativeCommonsBy,
 } from '@vicons/fa';
+import logoInvertedImg from '../assets/logo-inverted.png';
 </script>
 
 <style lang="scss" scoped>

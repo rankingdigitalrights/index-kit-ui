@@ -332,6 +332,8 @@
   </n-layout-content>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { NLayoutContent } from 'naive-ui';
+</script>
 
 <style lang="scss"></style>

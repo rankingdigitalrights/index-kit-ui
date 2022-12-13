@@ -22,6 +22,7 @@ import { h } from 'vue';
 import { RouterLink } from 'vue-router';
 import logoImg from '../assets/logo.png';
 import AppFooter from '../components/AppFooter.vue';
+import { NLayout, NLayoutSider, NMenu, NLayoutFooter, NImage } from 'naive-ui';
 
 const menuOptions = [
   {

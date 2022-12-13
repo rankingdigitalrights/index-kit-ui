@@ -1,6 +1,18 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import fileDownload from 'js-file-download';
+import {
+  NForm,
+  NFormItem,
+  NInput,
+  NSwitch,
+  NSlider,
+  NSpace,
+  NButton,
+  NCheckbox,
+  NCheckboxGroup,
+  NTransfer,
+} from 'naive-ui';
 // import { useMessage } from 'naive-ui'
 
 const formRef = ref(null);

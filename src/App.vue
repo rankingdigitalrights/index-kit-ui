@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import DefaultLayout from './layouts/DefaultLayout.vue';
-import type { GlobalThemeOverrides } from 'naive-ui';
+import {
+  NConfigProvider,
+  NGlobalStyle,
+  NLoadingBarProvider,
+  NMessageProvider,
+  NNotificationProvider,
+  NDialogProvider,
+  type GlobalThemeOverrides,
+} from 'naive-ui';
 
 const themeOverrides: GlobalThemeOverrides = {
   common: {
