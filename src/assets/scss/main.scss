@@ -76,3 +76,25 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 30px 50px 30px;
   margin: 0 auto;
 }
+// .n-form-item-label__text {
+//   border-bottom: 2px solid #E07260;
+//   margin-bottom: 5px;
+// }
+.custom-label {
+  border-bottom: 2px solid #E07260;
+  margin-bottom: 5px;
+}
+
+.n-form-item .n-form-item-label {
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+.card-shadowed {
+  box-shadow: 0px 0px 5px 1px #00000011
+}
+
+// if the element with class n-tree-node-conteznt__prefix has a child with class n-tag then align the child to the start
+.n-tree-node-content .n-tree-node-content__prefix {
+  align-self: flex-start;
+}

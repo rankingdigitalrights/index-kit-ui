@@ -4,6 +4,7 @@
       <h1>
         Ranking editor <n-icon @click="toggleHelp"><QuestionCircle /></n-icon>
       </h1>
+      <p><b>In this section you will create a configuration file with general information.</b></p>
       <RankingEditor />
     </div>
   </n-layout-content>
