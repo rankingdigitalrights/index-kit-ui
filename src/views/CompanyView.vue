@@ -4,6 +4,7 @@
       <h1>
         Companies Editor <n-icon @click="toggleHelp"><QuestionCircle /></n-icon>
       </h1>
+      <p><b>In this section you will create a configuration file with general information.</b></p>
       <CompaniesEditor />
     </div>
   </n-layout-content>
@@ -29,7 +30,7 @@
 import { ref, type Ref } from 'vue';
 import CompaniesEditor from '../components/CompaniesEditor.vue';
 import { QuestionCircle } from '@vicons/fa';
-import { useDialog, NLayoutContent, NLayoutSider } from 'naive-ui';
+import { useDialog, NIcon, NLayoutContent, NLayoutSider } from 'naive-ui';
 import { onBeforeRouteLeave } from 'vue-router';
 
 const dialog = useDialog();
