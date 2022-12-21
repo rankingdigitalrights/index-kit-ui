@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, type Ref, h } from 'vue';
+import { computed, ref, type Ref, h, onBeforeMount } from 'vue';
 import fileDownload from 'js-file-download';
 import {
   NIcon,
@@ -13,27 +13,27 @@ import {
   NButton,
   NCheckbox,
   NCheckboxGroup,
-  NTransfer,
   NCollapse,
   NCollapseItem,
   NModal,
   NLog,
   NTree,
-  NAlert,
   type TreeOption,
-  type DropdownOption,
+  // type DropdownOption,
   type FormRules,
   NTag,
   type FormInst,
   useDialog,
 } from 'naive-ui';
-import { AngleRight, FileDownload } from '@vicons/fa';
+import { AngleRight, FileDownload, Upload } from '@vicons/fa';
 // import { useMessage } from 'naive-ui'
 import type { RankingModel } from '../entities/RankingModel';
+import type { IndicatorModel } from '../entities/IndicatorModel';
 
 // const formRef = ref(null);
 const showPreviewModal = ref(false);
 const dialog = useDialog();
+const treeData: Ref<Array<TreeOption>> = ref([]);
 // const message = useMessage()
 const model: Ref<RankingModel> = ref({
   indexPrefix: '',
@@ -66,153 +66,50 @@ const outputJson = computed({
   },
 });
 
-// const indicatorOptions = [
-//   'G1',
-//   'G2',
-//   'G3',
-//   'G4a',
-//   'G4b',
-//   'G4c',
-//   'G4d',
-//   'G4e',
-//   'G5',
-//   'G6a',
-//   'G6b',
-//   'F1a',
-//   'F1b',
-//   'F1c',
-//   'F1d',
-//   'F2a',
-//   'F2b',
-//   'F2c',
-//   'F2d',
-//   'F3a',
-//   'F3b',
-//   'F3c',
-//   'F4a',
-//   'F4b',
-//   'F4c',
-//   'F5a',
-//   'F5b',
-//   'F6',
-//   'F7',
-//   'F8',
-//   'F9',
-//   'F10',
-//   'F11',
-//   'F12',
-//   'F13',
-//   'P1a',
-//   'P1b',
-//   'P2a',
-//   'P2b',
-//   'P3a',
-//   'P3b',
-//   'P4',
-//   'P5',
-//   'P6',
-//   'P7',
-//   'P8',
-//   'P9',
-//   'P10a',
-//   'P10b',
-//   'P11a',
-//   'P11b',
-//   'P12',
-//   'P13',
-//   'P14',
-//   'P15',
-//   'P16',
-//   'P17',
-//   'P18',
-// ].map((v) => ({ label: v, value: v }));
-
-const treeData: Array<TreeOption> = [
-  {
-    key: 'G',
-    label: 'Governance Indicators',
-    addPrefix: false,
-    children: [
-      {
-        addPrefix: true,
-        key: 'G1',
-        label:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales nulla, sed semper nisi. Cras lobortis volutpat nunc. Proin tincidunt enim in felis aliquet, a ultricies purus bibendum. Quisque in ultrices lectus. Nulla at urna diam. Proin sodales lobortis libero eu facilisis. In sem urna, aliquam vel consectetur sit amet, pulvinar sit amet lectus. Quisque molestie dapibus libero non pellentesque. Vivamus quam arcu, dictum quis hendrerit eget',
-      },
-      { addPrefix: true, key: 'G2', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'G3', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'G4a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'G4b', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'G4c', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'G4d', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'G4e', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'G5', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'G6a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'G6b', label: 'This is a text you can include' },
-    ],
-  },
-  {
-    key: 'F',
-    label: 'Freedom of Speech Indicators',
-    addPrefix: false,
-    children: [
-      { addPrefix: true, key: 'F1a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F1b', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F1c', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F1d', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F2a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F2b', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F2c', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F2d', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F3a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F3b', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F3c', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F4a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F4b', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F4c', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F5a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F5b', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F6', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F7', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F8', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F9', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F10', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F11', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F12', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'F13', label: 'This is a text you can include' },
-    ],
-  },
-  {
-    key: 'P',
-    label: 'Privacy Indicators',
-    addPrefix: false,
-    children: [
-      { addPrefix: true, key: 'P1a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P1b', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P2a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P2b', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P3a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P3b', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P4', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P5', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P6', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P7', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P8', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P9', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P10a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P10b', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P11a', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P11b', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P12', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P13', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P14', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P15', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P16', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P17', label: 'This is a text you can include' },
-      { addPrefix: true, key: 'P18', label: 'This is a text you can include' },
-    ],
-  },
-];
+onBeforeMount(() => {
+  // console.log('onCreated');
+  // download json indicators from public /data/indicators.json
+  fetch('/data/indicators.json')
+    .then((response) => response.json())
+    .then((data) => {
+      // data is an array of objects we call indicators
+      // indicators have id, category, label, description, and more...
+      // get a set of unique values of categories from the indicators
+      let categories: Set<string> = new Set(
+        data.map((indicator: IndicatorModel) => indicator.category)
+      );
+      console.log('categories', categories);
+      categories.forEach((category) => {
+        // create a new object with key and label
+        // key is the category name
+        // label is the category name with first letter capitalized
+        let categoryObj: TreeOption = {
+          key: category.charAt(0).toUpperCase(),
+          label: category.charAt(0).toUpperCase() + category.slice(1),
+          addPrefix: false,
+          children: [],
+        };
+        // filter the indicators by category
+        let categoryIndicators = data.filter(
+          (indicator: IndicatorModel) => indicator.category === category
+        );
+        // for each indicator create a new object with key, label, and description
+        categoryIndicators.forEach((indicator: IndicatorModel) => {
+          let indicatorObj: TreeOption = {
+            key: indicator.id?.toUpperCase(),
+            addPrefix: true,
+            label: indicator.label,
+            guidance: indicator.guidance,
+          };
+          // add the indicator object to the category object
+          if (categoryObj.children) categoryObj.children.push(indicatorObj);
+          else categoryObj.children = [indicatorObj];
+        });
+        // add the category object to the treeData array
+        treeData.value.push(categoryObj);
+      });
+    });
+});
 
 function onCheckedKeysChange(indicators: Array<string>): void {
   // update model.value when checkedKeys changed
@@ -220,6 +117,7 @@ function onCheckedKeysChange(indicators: Array<string>): void {
 }
 
 const formRef = ref<FormInst | null>(null);
+const inputFileRef = ref<HTMLInputElement | null>(null);
 
 function downloadJson() {
   // validate form
@@ -242,14 +140,31 @@ function renderPrefix({ option }: { option: TreeOption }) {
       NTag,
       {
         size: 'small',
+        type: 'info',
         bordered: false,
-        style: { marginTop: '3px' },
+        style: { marginTop: '1px', minWidth: '60px', justifyContent: 'center' },
       },
       { default: () => option.key }
     );
   // else return h('b', {}, `${option.key} -`);
   // else return null;
   else return h('b', { style: { marginTop: '1px' } }, `${option.key} -`);
+}
+
+function inputFile() {
+  inputFileRef.value?.click();
+}
+
+function onFileChange(e: Event) {
+  const file = (e.target as HTMLInputElement).files?.[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      let modelJson = JSON.parse(reader.result as string);
+      model.value = Object.assign({}, model.value, modelJson);
+    };
+    reader.readAsText(file);
+  }
 }
 
 const formRules: FormRules = {
@@ -313,13 +228,13 @@ const formRules: FormRules = {
           </template>
           <n-tree
             :data="treeData"
+            block-node
             checkable
             multiple
             cascade
             check-strategy="child"
-            :expand-on-click="true"
-            @update:checked-keys="onCheckedKeysChange"
             :selectable="false"
+            @update:checked-keys="onCheckedKeysChange"
             :render-prefix="renderPrefix"
           >
           </n-tree>
@@ -387,9 +302,19 @@ const formRules: FormRules = {
           </n-collapse-item>
         </n-collapse>
       </n-form>
+      <input
+        ref="inputFileRef"
+        type="file"
+        accept="application/json"
+        hidden
+        @change="onFileChange"
+      />
     </template>
     <template #action>
-      <n-space align="center" justify="end">
+      <n-space align="center" justify="space-between">
+        <n-button text type="primary" @click="inputFile">
+          <n-icon><Upload /></n-icon>&nbsp;Load JSON
+        </n-button>
         <n-button
           secondary
           size="tiny"
@@ -407,7 +332,7 @@ const formRules: FormRules = {
     v-model:show="showPreviewModal"
     title="Configuration Preview"
     preset="card"
-    style="maxWidth: 600px"
+    style="maxwidth: 600px"
     :bordered="false"
   >
     <template #header-extra> JSON </template>
