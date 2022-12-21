@@ -95,6 +95,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // if the element with class n-tree-node-conteznt__prefix has a child with class n-tag then align the child to the start
-.n-tree-node-content .n-tree-node-content__prefix {
-  align-self: flex-start;
+.n-tree-node-content {
+  &:hover {
+    background-color: transparent !important;
+    // cursor: none;
+  }
+  .n-tree-node-content__prefix {
+    align-self: flex-start;
+  }
 }
+
+
+// .n-tree:not(.n-tree--block-line) .n-tree-node:not(.n-tree-node--disabled) .n-tree-node-content:hover{
+//   background-color: transparent !important;
+// }

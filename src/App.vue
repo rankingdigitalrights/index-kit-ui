@@ -41,6 +41,7 @@ const themeOverrides: GlobalThemeOverrides = {
     borderDisabledChecked: '2px solid rgb(224,224,230)',
     borderChecked: '2px solid rgb(235, 106, 91)',
     boxShadowFocus: '0 0 0 2px rgba(235, 106, 91, 0.3)',
+    borderFocus: '2px solid rgb(235, 106, 91)',
   },
   Switch: {
     railColorActive: '#eb6a5b',
