@@ -24,6 +24,8 @@ import {
   NTag,
   type FormInst,
   useDialog,
+  useNotification,
+  NSkeleton,
 } from 'naive-ui';
 import { AngleRight, FileDownload, Upload } from '@vicons/fa';
 // import { useMessage } from 'naive-ui'
@@ -33,7 +35,9 @@ import type { IndicatorModel } from '../entities/IndicatorModel';
 // const formRef = ref(null);
 const showPreviewModal = ref(false);
 const dialog = useDialog();
+const notification = useNotification();
 const treeData: Ref<Array<TreeOption>> = ref([]);
+const loadingIndicators: Ref<boolean> = ref(true);
 // const message = useMessage()
 const model: Ref<RankingModel> = ref({
   indexPrefix: '',
@@ -108,6 +112,7 @@ onBeforeMount(() => {
         // add the category object to the treeData array
         treeData.value.push(categoryObj);
       });
+      loadingIndicators.value = false;
     });
 });
 
@@ -158,11 +163,29 @@ function inputFile() {
 function onFileChange(e: Event) {
   const file = (e.target as HTMLInputElement).files?.[0];
   if (file) {
+    // if file is not a json
+    if (file.type !== 'application/json') {
+      notification.error({
+        title: 'Error',
+        content: `File is not a JSON config.`,
+        duration: 3000,
+        keepAliveOnHover: true,
+      });
+      return;
+    }
+
     const reader = new FileReader();
-    reader.onload = () => {
+    reader.onload = () => {  
       let modelJson = JSON.parse(reader.result as string);
       model.value = Object.assign({}, model.value, modelJson);
+      notification.success({
+        title: 'Success',
+        content: `File loaded successfully.`,
+        duration: 3000,
+        keepAliveOnHover: true,
+      });
     };
+    
     reader.readAsText(file);
   }
 }
@@ -224,9 +247,10 @@ const formRules: FormRules = {
         </n-form-item>
         <n-form-item>
           <template #label>
-            <span class="custom-label">Indicators</span>
+            <span class="custom-label">Indicators <span v-show="loadingIndicators">(Loading...)</span></span>
           </template>
           <n-tree
+            v-if="!loadingIndicators"
             :data="treeData"
             block-node
             checkable
@@ -234,10 +258,15 @@ const formRules: FormRules = {
             cascade
             check-strategy="child"
             :selectable="false"
+            :checked-keys="model.indicators"
             @update:checked-keys="onCheckedKeysChange"
             :render-prefix="renderPrefix"
           >
           </n-tree>
+          <div v-else style="width: 60%">
+            <n-skeleton text :repeat="2" />
+            <n-skeleton text style="width: 60%" />
+          </div>
         </n-form-item>
         <!-- <n-form-item :span="12" path="transferValue">
           <n-transfer
