@@ -1,5 +1,3 @@
-import type { ka } from "date-fns/esm/locale";
-
 export class IndicatorModel {
   public id: string | undefined;
   public name: string | undefined;
