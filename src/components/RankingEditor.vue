@@ -26,8 +26,9 @@ import {
   useDialog,
   useNotification,
   NSkeleton,
+  NText,
 } from 'naive-ui';
-import { AngleRight, FileDownload, Upload } from '@vicons/fa';
+import { AngleRight, FileDownload, Upload, Question } from '@vicons/fa';
 // import { useMessage } from 'naive-ui'
 import type { RankingModel } from '../entities/RankingModel';
 import type { IndicatorModel } from '../entities/IndicatorModel';
@@ -103,6 +104,7 @@ onBeforeMount(() => {
             key: indicator.id?.toUpperCase(),
             addPrefix: true,
             label: indicator.label,
+            description: indicator.description,
             guidance: indicator.guidance,
           };
           // add the indicator object to the category object
@@ -146,15 +148,107 @@ function renderPrefix({ option }: { option: TreeOption }) {
       {
         size: 'small',
         type: 'info',
-        bordered: false,
+        bordered: true,
         style: { marginTop: '1px', minWidth: '60px', justifyContent: 'center' },
       },
       { default: () => option.key }
     );
   // else return h('b', {}, `${option.key} -`);
   // else return null;
-  else return h('b', { style: { marginTop: '1px' } }, `${option.key} -`);
+  // else return h('b', { style: { marginTop: '1px' } }, `${option.key}`);
+  else
+    return h(
+      NTag,
+      {
+        size: 'small',
+        bordered: true,
+        style: { marginTop: '1px', minWidth: '30px', justifyContent: 'center' },
+      },
+      { default: () => option.key }
+    );
+  // else return null;
 }
+
+function renderLabel({ option }: { option: TreeOption }) {
+  // return the label with an icon appended
+  return h(
+    NSpace,
+    {
+      align: 'start',
+      wrap: false,
+    },
+    {
+      default: () => [
+        option.guidance
+          ? h(
+              NText,
+              {
+                type: 'info',
+                style: { cursor: 'pointer' },
+                onclick: () => {
+                  dialog.info({
+                    title: `${option.key} - ${option.label}`,
+                    content: () => [
+                      h(
+                        'div',
+                        {
+                          innerHTML: option.description,
+                          style: {
+                            fontSize: '0.8rem',
+                            textAlign: 'justify',
+                            fontWeight: '600',
+                          },
+                        },
+                        {}
+                      ),
+                      h(
+                        'div',
+                        {
+                          innerHTML: option.guidance,
+                          style: {
+                            fontSize: '0.7rem',
+                            lineHeight: '1rem',
+                            textAlign: 'justify',
+                          },
+                        },
+                        {}
+                      ),
+                    ],
+                    positiveText: 'Close',
+                  });
+                },
+              },
+              {
+                default: () =>
+                  h(
+                    NIcon,
+                    {
+                      size: '10',
+                      component: Question,
+                    },
+                    {}
+                  ),
+              }
+            )
+          : null,
+        option.label,
+      ],
+    }
+  );
+}
+
+// function renderSuffix({ option }: { option: TreeOption }) {
+//   if (option.guidance)
+//     return h(
+//      NIcon,
+//      {
+//         size: 'small',
+//         component: QuestionCircle,
+//      },
+//      {}
+//     );
+//   else return null;
+// }
 
 function inputFile() {
   inputFileRef.value?.click();
@@ -175,7 +269,7 @@ function onFileChange(e: Event) {
     }
 
     const reader = new FileReader();
-    reader.onload = () => {  
+    reader.onload = () => {
       let modelJson = JSON.parse(reader.result as string);
       model.value = Object.assign({}, model.value, modelJson);
       notification.success({
@@ -185,7 +279,7 @@ function onFileChange(e: Event) {
         keepAliveOnHover: true,
       });
     };
-    
+
     reader.readAsText(file);
   }
 }
@@ -247,7 +341,10 @@ const formRules: FormRules = {
         </n-form-item>
         <n-form-item>
           <template #label>
-            <span class="custom-label">Indicators <span v-show="loadingIndicators">(Loading...)</span></span>
+            <span class="custom-label"
+              >Indicators
+              <span v-show="loadingIndicators">(Loading...)</span></span
+            >
           </template>
           <n-tree
             v-if="!loadingIndicators"
@@ -261,6 +358,8 @@ const formRules: FormRules = {
             :checked-keys="model.indicators"
             @update:checked-keys="onCheckedKeysChange"
             :render-prefix="renderPrefix"
+            :render-label="renderLabel"
+            style="width: 100%"
           >
           </n-tree>
           <div v-else style="width: 60%">
@@ -268,14 +367,6 @@ const formRules: FormRules = {
             <n-skeleton text style="width: 60%" />
           </div>
         </n-form-item>
-        <!-- <n-form-item :span="12" path="transferValue">
-          <n-transfer
-            v-model:value="model.indicators"
-            source-title="Excluded"
-            target-title="Included"
-            :options="indicatorOptions"
-          />
-        </n-form-item> -->
         <n-collapse display-directive="show">
           <template #arrow>
             <n-icon color="#eb6a5b">
