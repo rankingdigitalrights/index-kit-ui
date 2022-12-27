@@ -8,7 +8,7 @@ const lightThemeOverride: GlobalThemeOverrides = {
       'v-mono, SFMono-Regular, Menlo, Consolas, Courier, monospace',
   },
   Typography: {
-    headerTextColor: '#1c5275'
+    headerTextColor: '#1c5275',
   },
   Menu: {
     itemColorHover: 'rgba(255, 255, 255, 0)',
@@ -75,7 +75,7 @@ const darkThemeOverride: GlobalThemeOverrides = {
       'v-mono, SFMono-Regular, Menlo, Consolas, Courier, monospace',
   },
   Typography: {
-    headerTextColor: '#eb6a5b'
+    headerTextColor: '#eb6a5b',
   },
   Menu: {
     itemColorHover: 'rgba(255, 255, 255, 0)',

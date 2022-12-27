@@ -23,7 +23,9 @@ const props = defineProps<{
           >
             <b>{{ item.name }}</b
             >: {{ item.description
-            }}<n-text v-if="item.example" type="info">&nbsp;For example: {{ item.example }}</n-text>
+            }}<n-text v-if="item.example" type="info"
+              >&nbsp;For example: {{ item.example }}</n-text
+            >
           </n-p>
         </template>
       </n-collapse-item>

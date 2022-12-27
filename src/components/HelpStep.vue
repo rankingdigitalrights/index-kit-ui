@@ -1,16 +1,10 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import {
-  NH1,
-  NP,
-  NText,
-  NSpace,
-} from 'naive-ui'
+import { defineProps } from 'vue';
+import { NH1, NP, NSpace } from 'naive-ui';
 
 const props = defineProps<{
-  stepNumber: number | string
-}>()
-
+  stepNumber: number | string;
+}>();
 </script>
 
 <template>

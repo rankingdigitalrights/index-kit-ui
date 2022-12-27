@@ -3,7 +3,11 @@
     <n-layout has-sider class="layout-top">
       <n-layout-sider width="20%">
         <n-space align="center" justify="space-between" class="sidebar-logo">
-          <n-image :src="props.isDarkModeActive ? logoInvertedImg : logoImg" height="60" preview-disabled />
+          <n-image
+            :src="props.isDarkModeActive ? logoInvertedImg : logoImg"
+            height="60"
+            preview-disabled
+          />
         </n-space>
         <n-menu :options="menuOptions" />
       </n-layout-sider>
@@ -17,7 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-import { h, ref, type Ref, defineProps, defineEmits } from 'vue';
+import { h, defineProps, defineEmits } from 'vue';
 import { RouterLink } from 'vue-router';
 import logoImg from '../assets/logo.png';
 import logoInvertedImg from '../assets/logo-inverted.png';
