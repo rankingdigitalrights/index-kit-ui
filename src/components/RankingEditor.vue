@@ -459,15 +459,4 @@ const formRules: FormRules = {
     <template #header-extra> JSON </template>
     <n-log :font-size="13" :rows="15" :log="outputJson" class="logger" />
   </n-modal>
-
-  <!-- <n-input
-    v-model:value="outputJson"
-    type="textarea"
-    style="font-family: monospace, monospace"
-  /> -->
-  <n-space> </n-space>
-
-  <!-- <pre>
-    {{  JSON.stringify(model, 0, 2) }}
-  </pre> -->
 </template>
