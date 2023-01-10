@@ -1,4 +1,6 @@
-import type { Service } from './Service';
+import type { Service, ServiceFormModel } from './Service';
+
+export type CompanyType = 'telecom' | 'internet';
 
 export class Company {
   public id: string;
@@ -7,7 +9,7 @@ export class Company {
     altFilename: string | null;
     legacy: Array<string>;
   };
-  public type: 'telecom' | 'internet';
+  public type: CompanyType;
   public groupLabel: string;
   public hasOpCom: boolean;
   public opComLabel: string | null;
@@ -18,7 +20,7 @@ export class Company {
     id: string;
     name: string;
     group: string;
-    type: 'telecom' | 'internet';
+    type: CompanyType;
     operationCompany: string | null;
   }) {
     this.id = params.id;
@@ -39,4 +41,34 @@ export class Company {
     this.tabPrevYearsOutcome = null;
     this.services = [];
   }
+
+  public addService(service: Service) {
+    this.services.push(service);
+  }
+
+  public removeService(service: Service) {
+    const index = this.services.indexOf(service);
+    if (index > -1) {
+      this.services.splice(index, 1);
+    }
+  }
 }
+
+interface CompanyTypeObject {
+  value: CompanyType;
+  label: string;
+}
+
+export const companyTypeArray: Array<CompanyTypeObject> = [
+  { value: 'telecom', label: 'Telecom company' },
+  { value: 'internet', label: 'Internet platform' },
+];
+
+export type CompanyFormModel = {
+  id: string;
+  name: string;
+  group: string;
+  type: CompanyType;
+  operationCompany: string;
+  services: ServiceFormModel[];
+};
