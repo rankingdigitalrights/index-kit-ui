@@ -1,11 +1,20 @@
 <template>
   <n-layout-content :native-scrollbar="false" class="main-content" width="55%">
+  <n-space>
+
     <div class="section-content">
-      <h1>
+      <n-h1>
         Companies Editor <n-icon @click="toggleHelp"><QuestionCircle /></n-icon>
-      </h1>
+      </n-h1>
+      <n-p
+        ><b
+          >In this section you will create a configuration file with general
+          information.</b
+        ></n-p
+      >
       <CompaniesEditor />
     </div>
+  </n-space>
   </n-layout-content>
   <div class="layout-line" v-show="showHelpSider">&nbsp;</div>
   <n-layout-sider
@@ -29,7 +38,14 @@
 import { ref, type Ref } from 'vue';
 import CompaniesEditor from '../components/CompaniesEditor.vue';
 import { QuestionCircle } from '@vicons/fa';
-import { useDialog, NLayoutContent, NLayoutSider } from 'naive-ui';
+import {
+  useDialog,
+  NIcon,
+  NLayoutContent,
+  NLayoutSider,
+  NH1,
+  NP,
+} from 'naive-ui';
 import { onBeforeRouteLeave } from 'vue-router';
 
 const dialog = useDialog();

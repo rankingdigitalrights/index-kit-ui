@@ -1,11 +1,14 @@
 <template>
-  <div class="container">
-    <div class="sidebar-logo">
-      <n-image :src="logoImg" height="60" preview-disabled />
-    </div>
+  <div class="">
     <n-layout has-sider class="layout-top">
-      <n-layout-sider width="15%">
-        <br />
+      <n-layout-sider width="20%">
+        <n-space align="center" justify="space-between" class="sidebar-logo">
+          <n-image
+            :src="props.isDarkModeActive ? logoInvertedImg : logoImg"
+            height="60"
+            preview-disabled
+          />
+        </n-space>
         <n-menu :options="menuOptions" />
       </n-layout-sider>
       <div class="layout-line">&nbsp;</div>
@@ -18,11 +21,29 @@
 </template>
 
 <script lang="ts" setup>
-import { h } from 'vue';
+import { h, defineProps, defineEmits } from 'vue';
 import { RouterLink } from 'vue-router';
 import logoImg from '../assets/logo.png';
+import logoInvertedImg from '../assets/logo-inverted.png';
 import AppFooter from '../components/AppFooter.vue';
-import { NLayout, NLayoutSider, NMenu, NLayoutFooter, NImage } from 'naive-ui';
+import { Sun, MoonRegular } from '@vicons/fa';
+import {
+  NLayout,
+  NLayoutSider,
+  NMenu,
+  NLayoutFooter,
+  NImage,
+  NIcon,
+  NSpace,
+} from 'naive-ui';
+
+const props = defineProps<{
+  isDarkModeActive: boolean;
+}>();
+
+const emit = defineEmits<{
+  (e: 'changeTheme'): void;
+}>();
 
 const menuOptions = [
   {
@@ -81,6 +102,34 @@ const menuOptions = [
       ),
     key: 'go-company',
   },
+  {
+    key: 'toggle-theme',
+    label: () =>
+      h(
+        'a',
+        {
+          // class: 'menu-link',
+          onClick: () => emit('changeTheme'),
+        },
+        {
+          default: () => {
+            if (props.isDarkModeActive) return 'Dark mode';
+            else return 'Light mode';
+          },
+        }
+      ),
+    icon: () =>
+      h(
+        NIcon,
+        {},
+        {
+          default: () => {
+            if (props.isDarkModeActive) return h(MoonRegular);
+            else return h(Sun);
+          },
+        }
+      ),
+  },
 ];
 </script>
 
@@ -92,7 +141,7 @@ const menuOptions = [
   height: 120px;
 }
 .layout-top {
-  min-height: calc(100vh - 120px - 120px);
+  min-height: calc(100vh - 120px);
   display: flex;
   box-sizing: border-box;
   // padding-top: 30px;
