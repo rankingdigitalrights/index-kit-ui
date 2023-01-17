@@ -6,25 +6,31 @@
           <a href="https://google.com" target="_blank">Privacy policy</a>
           <br />
           <p>
-            <a href="https://google.com" target="_blank">
+            <a href="https://twitter.com/rankingrights" target="_blank">
               <n-icon size="24">
                 <Twitter />
               </n-icon>
             </a>
-            <a href="https://google.com" target="_blank">
+            <a
+              href="https://www.linkedin.com/company/ranking-digital-rights/"
+              target="_blank"
+            >
               <n-icon size="24">
                 <Linkedin />
               </n-icon>
             </a>
-            <a href="https://google.com" target="_blank">
-              <n-icon size="24">
-                <CreativeCommons />
-              </n-icon>
-            </a>
-            <a href="https://google.com" target="_blank">
-              <n-icon size="24">
-                <CreativeCommonsBy />
-              </n-icon>
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/legalcode"
+              target="_blank"
+            >
+              <n-space inline size="small">
+                <n-icon size="24">
+                  <CreativeCommons />
+                </n-icon>
+                <n-icon size="24">
+                  <CreativeCommonsBy />
+                </n-icon>
+              </n-space>
             </a>
           </p>
         </div>
@@ -37,7 +43,7 @@
 </template>
 
 <script lang="ts" setup>
-import { NGrid, NGi, NIcon, NImage } from 'naive-ui';
+import { NGrid, NGi, NIcon, NImage, NSpace } from 'naive-ui';
 import {
   Twitter,
   Linkedin,

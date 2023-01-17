@@ -33,6 +33,9 @@ const lightThemeOverride: GlobalThemeOverrides = {
     borderFocus: '1px solid #eb6a5b',
     boxShadowFocus: '0 0 0 2px rgba(235, 106, 91, 0.3)',
   },
+  InternalSelection: {
+    border: '1px solid #1c5275',
+  },
   Checkbox: {
     border: '2px solid #1c5275',
     colorChecked: '#eb6a5b',
@@ -103,6 +106,9 @@ const darkThemeOverride: GlobalThemeOverrides = {
     borderHover: '1px solid #eb6a5b',
     borderFocus: '1px solid #eb6a5b',
     boxShadowFocus: '0 0 0 2px rgba(235, 106, 91, 0.3)',
+  },
+  InternalSelection: {
+    border: '1px solid #1c5275',
   },
   Checkbox: {
     border: '2px solid #1c5275',

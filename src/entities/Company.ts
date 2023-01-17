@@ -69,6 +69,6 @@ export type CompanyFormModel = {
   name: string;
   group: string;
   type: CompanyType;
-  operationCompany: string;
+  operationCompany: string | null;
   services: ServiceFormModel[];
 };

@@ -1,5 +1,3 @@
-import type { ServiceType } from './ServiceType.ts.old';
-
 export class Service {
   public id: string;
   public type: ServiceType;
@@ -67,6 +65,7 @@ export const serviceTypeArray: ServiceTypeObject[] = [
 ];
 
 export const serviceSubtypeArray: ServiceSubtypeObject[] = [
+  { value: null, label: 'No subtype' },
   { value: 'prepaid', label: 'Prepaid Service' },
   { value: 'postpaid', label: 'Postpaid Service' },
 ];
