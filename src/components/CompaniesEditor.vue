@@ -284,9 +284,6 @@ const serviceIdArray: ComputedRef<string[]> = computed(() => {
 </script>
 
 <template>
-  {{ companiesIdArray }}
-  {{ serviceIdArray }}
-  <!-- <p>Highest ID: {{ nextCompanyIdNumber }}</p> -->
   <CompanyForm
     ref="companyFormRef"
     :submit-company="submitCompany"
