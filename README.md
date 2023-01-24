@@ -1,113 +1,11 @@
-# index-kit-ui
+# vite-vue3-essential-typescript-eslint-starter
 
-This template should help get you started developing with Vue 3 in Vite.
+This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
-## Type Support for `.vue` Imports in TS
+## Type Support For `.vue` Imports in TS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
-
-
-----
-
-## Developing 
-
-### UI Library: Naive UI
-
-Website: https://www.naiveui.com/
-
-Naive UI is used as the UI library and is installed Globally, see [Install Globally](https://www.naiveui.com/en-US/os-theme/docs/usage-sfc#Install-Globally-(Not-Recommended)).
-
-###### Using Naive UI with Volar support
-
-Is possible to `compilerOptions.types` in `tsconfig.json`.
-
-```json
-{
-  "compilerOptions": {
-    // ...
-    "types": ["naive-ui/volar"]
-  }
-}
-
-```
-
-
-### Pinia: State Management
-
-Website: https://pinia.vuejs.org/
-Version: 2.x
-
-### Vue Router: Routing
-
-Website: https://router.vuejs.org/
-Version: 4.x
-
-### VueJs: Core
-
-Website: https://v3.vuejs.org/
-Version: 3.x
-
-### Vite: Development Server
-
-Website: https://vitejs.dev/
-Version: 2.x
-Using plugin: @vitejs/plugin-vue
-
-### CSS Pre-processors
-
-According to the ViteJS Documentation, *Vite does provide built-in support for .scss, .sass, .less, .styl and .stylus files. There is no need to install Vite-specific plugins for them, but the corresponding pre-processor itself must be installed:*
-
-```
-# .scss and .sass
-npm add -D sass
-```
-
-Then inside single file components, you can import the styles like this:
-
-```vue
-<style lang="scss">
-```
-
-
-### Recommended Tools
-
-- [Vue Devtools](
+Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
