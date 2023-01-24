@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+$primary: #eb6a5b;
+$secondary: #1c5275;
+
+.container {
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+}
+
+.container.is-fluid {
+  max-width: none !important;
+  padding-left: 32px;
+  padding-right: 32px;
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 1215px) {
+  .container.is-widescreen:not(.is-max-desktop) {
+    max-width: 1152px;
+  }
+}
+
+@media screen and (max-width: 1407px) {
+  .container.is-fullhd:not(.is-max-desktop):not(.is-max-widescreen) {
+    max-width: 1344px;
+  }
+}
+
+@media screen and (min-width: 1216px) {
+  .container:not(.is-max-desktop) {
+    max-width: 1152px;
+  }
+}
+
+@media screen and (min-width: 1408px) {
+  .container:not(.is-max-desktop):not(.is-max-widescreen) {
+    max-width: 1344px;
+  }
+}
+
+.menu-link{
+  font-weight: 600;
+  font-size: 14px;
+  &.router-link-exact-active {
+    color: #eb6a5b !important;
+  }
+}
+
+// h1, h2, h3, h4, h5, h6 {
+//   color: $secondary;
+// }
+
+
+// Layout helpers, used in layouts, references are used in the views files.
+
+.n-layout-scroll-container {
+  height: auto !important;
+}
+
+.layout-line{
+  min-height: 250px;
+  height: 100%;
+  background-color: #eb6a5b;
+}
+
+.section-content {
+  padding: 30px 30px 50px 30px;
+  margin: 0 auto;
+}
+// .n-form-item-label__text {
+//   border-bottom: 2px solid #E07260;
+//   margin-bottom: 5px;
+// }
+.custom-label {
+  border-bottom: 2px solid #E07260;
+  margin-bottom: 5px;
+}
+
+.n-form-item .n-form-item-label {
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+.card-shadowed {
+  box-shadow: 0px 0px 5px 1px #00000011
+}
+
+// if the element with class n-tree-node-conteznt__prefix has a child with class n-tag then align the child to the start
+.n-tree-node-content {
+  &:hover {
+    background-color: transparent !important;
+    // cursor: none;
+  }
+  .n-tree-node-content__prefix {
+    align-self: flex-start;
+  }
+}
+
+
+// .n-tree:not(.n-tree--block-line) .n-tree-node:not(.n-tree-node--disabled) .n-tree-node-content:hover{
+//   background-color: transparent !important;
+// }
+
+.logger {
+  border: 1px solid #e8e8e8;
+}

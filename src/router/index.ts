@@ -1,10 +1,10 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
 
-import Home from './views/Home.vue';
-import About from './views/About.vue';
-import Company from './views/Company.vue';
-import Ranking from './views/Ranking.vue';
+import Home from '@/views/HomeView.vue';
+import About from '@/views/AboutView.vue';
+import Company from '@/views/CompanyView.vue';
+import Ranking from '@/views/RankingView.vue';
 
 export const routes: RouteRecordRaw[] = [
   {
@@ -29,7 +29,9 @@ export const routes: RouteRecordRaw[] = [
   },
 ];
 
-export const router = createRouter({
-  history: createWebHashHistory(),
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
+
+export default router;
