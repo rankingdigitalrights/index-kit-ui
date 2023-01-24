@@ -334,9 +334,9 @@ const formRules: FormRules = {
           </template>
           <n-checkbox-group v-model:value="model.scoringSteps">
             <n-space>
-              <n-checkbox size="large" value="1">Step 1</n-checkbox>
-              <n-checkbox size="large" value="2">Step 2</n-checkbox>
-              <n-checkbox size="large" value="3">Step 3</n-checkbox>
+              <n-checkbox size="large" :value="1">Step 1</n-checkbox>
+              <n-checkbox size="large" :value="2">Step 2</n-checkbox>
+              <n-checkbox size="large" :value="3">Step 3</n-checkbox>
             </n-space>
           </n-checkbox-group>
         </n-form-item>
