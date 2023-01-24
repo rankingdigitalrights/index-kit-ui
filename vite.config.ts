@@ -1,3 +1,5 @@
+import { fileURLToPath, URL } from 'node:url';
+
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import eslintPlugin from 'vite-plugin-eslint';
@@ -5,8 +7,10 @@ import eslintPlugin from 'vite-plugin-eslint';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), eslintPlugin()],
-  build: {
-    chunkSizeWarningLimit:1500
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
   },
-  base: '/index-kit-web/'
+  base: '/index-kit-web/',
 });
