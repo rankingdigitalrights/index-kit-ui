@@ -120,8 +120,11 @@ const formRules: FormRules = {
 
 // METHODS
 
-function noSideSpace(value: string) {
-  return !/ /g.test(value);
+function onlyAlphaNumeric(value: string): boolean {
+  // allow only alphanumeric characters
+  if (value === '') return true;
+  let test: boolean = /^[a-zA-Z0-9]+$/.test(value);
+  return test;
 }
 
 function submit() {
@@ -411,7 +414,7 @@ defineExpose({ setEditCompany });
                     </n-input-group-label>
                     <n-input
                       size="small"
-                      :allow-input="noSideSpace"
+                      :allow-input="onlyAlphaNumeric"
                       v-model:value="companyPrefixId"
                       placeholder="Ex. com-"
                     />
@@ -456,7 +459,7 @@ defineExpose({ setEditCompany });
                   }}</n-input-group-label>
                   <n-input
                     v-model:value="companyModel.id"
-                    :allow-input="noSideSpace"
+                    :allow-input="onlyAlphaNumeric"
                     placeholder="Ex. ARD001"
                   />
                 </n-input-group>
@@ -523,7 +526,7 @@ defineExpose({ setEditCompany });
                   v-model:value="value.id"
                   type="text"
                   placeholder="ID *"
-                  :allow-input="noSideSpace"
+                  :allow-input="onlyAlphaNumeric"
                 />
                 <n-input
                   v-model:value="value.name"
