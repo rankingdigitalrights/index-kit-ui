@@ -23,8 +23,8 @@
 <script lang="ts" setup>
 import { h, defineProps, defineEmits } from 'vue';
 import { RouterLink } from 'vue-router';
-import logoImg from '../assets/logo.png';
-import logoInvertedImg from '../assets/logo-inverted.png';
+import logoImg from '../assets/lab-logo.svg';
+import logoInvertedImg from '../assets/lab-logo-white.svg';
 import AppFooter from '../components/AppFooter.vue';
 import { Sun, MoonRegular } from '@vicons/fa';
 import {

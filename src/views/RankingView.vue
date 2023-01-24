@@ -69,7 +69,7 @@ import { onBeforeRouteLeave } from 'vue-router';
 
 const dialog = useDialog();
 
-const showHelpSider: Ref<boolean> = ref(false);
+const showHelpSider: Ref<boolean> = ref(true);
 const toggleHelp = () => {
   showHelpSider.value = !showHelpSider.value;
 };

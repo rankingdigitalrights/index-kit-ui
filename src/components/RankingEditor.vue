@@ -305,6 +305,7 @@ const formRules: FormRules = {
 </script>
 
 <template>
+  <!-- TODO delete this -->
   <div ref="alert"></div>
   <n-card
     class="card-shadowed"
@@ -349,7 +350,7 @@ const formRules: FormRules = {
           <n-tree
             v-if="!loadingIndicators"
             :data="treeData"
-            block-node
+            block-line
             checkable
             multiple
             cascade
@@ -452,27 +453,10 @@ const formRules: FormRules = {
     v-model:show="showPreviewModal"
     title="Configuration Preview"
     preset="card"
-    style="maxwidth: 600px"
+    style="width: 600px"
     :bordered="false"
   >
     <template #header-extra> JSON </template>
     <n-log :font-size="13" :rows="15" :log="outputJson" class="logger" />
   </n-modal>
-
-  <!-- <n-input
-    v-model:value="outputJson"
-    type="textarea"
-    style="font-family: monospace, monospace"
-  /> -->
-  <n-space> </n-space>
-
-  <!-- <pre>
-    {{  JSON.stringify(model, 0, 2) }}
-  </pre> -->
 </template>
-
-<style lang="scss">
-.logger {
-  border: 1px solid #e8e8e8;
-}
-</style>

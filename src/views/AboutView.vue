@@ -1,10 +1,10 @@
 <template>
   <n-layout-content :native-scrollbar="false" width="55%">
     <div class="section-content">
-      <h1>About this toolkit</h1>
-      <p>This is an about page.</p>
+      <n-h1>About this toolkit</n-h1>
+      <n-p>This is an about page.</n-p>
       <!-- BIG LOREM IPSUM -->
-      <p>
+      <n-p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus
         dui orci, eget tincidunt augue semper eget. Aenean commodo felis aliquam
         nisi dictum semper. Donec euismod ligula a ligula faucibus pulvinar.
@@ -84,8 +84,8 @@
         nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
         Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
         vel accumsan ex.
-      </p>
-      <p>
+      </n-p>
+      <n-p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus
         dui orci, eget tincidunt augue semper eget. Aenean commodo felis aliquam
         nisi dictum semper. Donec euismod ligula a ligula faucibus pulvinar.
@@ -165,8 +165,8 @@
         nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
         Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
         vel accumsan ex.
-      </p>
-      <p>
+      </n-p>
+      <n-p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus
         dui orci, eget tincidunt augue semper eget. Aenean commodo felis aliquam
         nisi dictum semper. Donec euismod ligula a ligula faucibus pulvinar.
@@ -246,8 +246,8 @@
         nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
         Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
         vel accumsan ex.
-      </p>
-      <p>
+      </n-p>
+      <n-p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus
         dui orci, eget tincidunt augue semper eget. Aenean commodo felis aliquam
         nisi dictum semper. Donec euismod ligula a ligula faucibus pulvinar.
@@ -327,13 +327,13 @@
         nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
         Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
         vel accumsan ex.
-      </p>
+      </n-p>
     </div>
   </n-layout-content>
 </template>
 
 <script setup lang="ts">
-import { NLayoutContent } from 'naive-ui';
+import { NLayoutContent, NH1, NP } from 'naive-ui';
 </script>
 
 <style lang="scss"></style>
