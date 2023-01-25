@@ -28,7 +28,7 @@ import {
   NSkeleton,
   NText,
 } from 'naive-ui';
-import { AngleRight, FileDownload, Upload, Question } from '@vicons/fa';
+import { AngleRight, FileDownload, Upload, QuestionCircle } from '@vicons/fa';
 // import { useMessage } from 'naive-ui'
 import type { RankingModel } from '../entities/RankingModel';
 import type { IndicatorModel } from '../entities/IndicatorModel';
@@ -153,9 +153,6 @@ function renderPrefix({ option }: { option: TreeOption }) {
       },
       { default: () => option.key }
     );
-  // else return h('b', {}, `${option.key} -`);
-  // else return null;
-  // else return h('b', { style: { marginTop: '1px' } }, `${option.key}`);
   else
     return h(
       NTag,
@@ -223,8 +220,8 @@ function renderLabel({ option }: { option: TreeOption }) {
                   h(
                     NIcon,
                     {
-                      size: '10',
-                      component: Question,
+                      size: '12',
+                      component: QuestionCircle,
                     },
                     {}
                   ),

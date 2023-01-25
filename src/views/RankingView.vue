@@ -3,9 +3,11 @@
     <div class="section-content">
       <n-space align="start" justify="space-between">
         <n-h1> Ranking editor </n-h1>
-        <n-icon size="25" @click="toggleHelp">
-          <QuestionCircle />
-        </n-icon>
+        <n-button text type="primary">
+          <n-icon size="25" @click="toggleHelp">
+            <QuestionCircle />
+          </n-icon>
+        </n-button>
       </n-space>
       <n-p
         ><b
@@ -62,6 +64,7 @@ import {
   useDialog,
   NH1,
   NP,
+  NButton,
   NSpace,
 } from 'naive-ui';
 // import beforeRouterLeave
