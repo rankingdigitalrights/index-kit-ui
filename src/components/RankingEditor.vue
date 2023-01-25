@@ -252,19 +252,6 @@ function renderLabel({ option }: { option: TreeOption }) {
   );
 }
 
-// function renderSuffix({ option }: { option: TreeOption }) {
-//   if (option.guidance)
-//     return h(
-//      NIcon,
-//      {
-//         size: 'small',
-//         component: QuestionCircle,
-//      },
-//      {}
-//     );
-//   else return null;
-// }
-
 function inputFile() {
   inputFileRef.value?.click();
 }
