@@ -286,11 +286,19 @@ function onFileChange(e: Event) {
   }
 }
 
+function onlyAlphaNumeric(value: string): boolean {
+  // allow only alphanumeric characters
+  if (value === '') return true;
+  let test: boolean = /^[a-zA-Z0-9]+$/.test(value);
+  return test;
+}
+
 const formRules: FormRules = {
   indexPrefix: {
     required: true,
     message: 'Index Prefix is required',
     trigger: 'blur',
+    whitespace: true,
   },
   scoringSteps: {
     type: 'array',
@@ -328,7 +336,11 @@ const formRules: FormRules = {
           <template #label>
             <span class="custom-label">Index Prefix</span>
           </template>
-          <n-input v-model:value="model.indexPrefix" placeholder="RDR21M" />
+          <n-input
+            v-model:value="model.indexPrefix"
+            :allow-input="onlyAlphaNumeric"
+            placeholder="RDR21M"
+          />
         </n-form-item>
         <n-form-item :span="14" path="scoringSteps">
           <template #label>
