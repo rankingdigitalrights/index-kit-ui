@@ -83,7 +83,7 @@ onBeforeMount(() => {
       let categories: Set<string> = new Set(
         data.map((indicator: IndicatorModel) => indicator.category)
       );
-      console.log('categories', categories);
+      console.log(data);
       categories.forEach((category) => {
         // create a new object with key and label
         // key is the category name
@@ -96,17 +96,38 @@ onBeforeMount(() => {
         };
         // filter the indicators by category
         let categoryIndicators = data.filter(
-          (indicator: IndicatorModel) => indicator.category === category
+          (indicator: IndicatorModel) =>
+            indicator.category === category && !indicator.parent
         );
+        console.log('categoryIndicators', categoryIndicators);
         // for each indicator create a new object with key, label, and description
         categoryIndicators.forEach((indicator: IndicatorModel) => {
           let indicatorObj: TreeOption = {
-            key: indicator.id?.toUpperCase(),
+            key: indicator.name,
             addPrefix: true,
             label: indicator.label,
-            description: indicator.description,
-            guidance: indicator.guidance,
+            description: !indicator.isParent ? indicator.description : null,
+            guidance: !indicator.isParent ? indicator.guidance : null,
           };
+          if (indicator.isParent) {
+            // filter the indicators by parent
+            let childrenIndicators = data.filter((child: IndicatorModel) => {
+              return child.parent === indicator.id;
+            });
+            if (childrenIndicators.length > 0) {
+              indicatorObj.children = [];
+              childrenIndicators.forEach((child: IndicatorModel) => {
+                let childObj: TreeOption = {
+                  key: child.name,
+                  addPrefix: true,
+                  label: child.label,
+                  description: child.description,
+                  guidance: child.guidance,
+                };
+                indicatorObj.children?.push(childObj);
+              });
+            }
+          }
           // add the indicator object to the category object
           if (categoryObj.children) categoryObj.children.push(indicatorObj);
           else categoryObj.children = [indicatorObj];
@@ -114,6 +135,7 @@ onBeforeMount(() => {
         // add the category object to the treeData array
         treeData.value.push(categoryObj);
       });
+      console.log(treeData.value);
       loadingIndicators.value = false;
     });
 });
