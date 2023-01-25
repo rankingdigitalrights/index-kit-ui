@@ -1,6 +1,6 @@
 <template>
   <n-layout-content :native-scrollbar="false" class="main-content" width="55%">
-    <div class="section-content">
+    <div id="drawer-target" class="section-content">
       <n-space align="start" justify="space-between">
         <n-h1> Ranking editor </n-h1>
         <n-button text type="primary">
@@ -18,44 +18,34 @@
       <RankingEditor />
     </div>
   </n-layout-content>
-  <div class="layout-line" v-show="showHelpSider">&nbsp;</div>
+  <div class="layout-line" v-show="!isMobile && showHelpSider">&nbsp;</div>
   <n-layout-sider
     width="25%"
-    v-show="showHelpSider"
+    v-if="!isMobile && showHelpSider"
     class="section-content"
     :native-scrollbar="false"
   >
-    <n-h1>How to</n-h1>
-    <!-- lorem ipsum -->
-    <HelpStep stepNumber="1"> Lorem ipsum dolor si. </HelpStep>
-    <HelpStep stepNumber="2">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur,
-      nisl nec ultricies lacinia
-    </HelpStep>
-    <HelpStep stepNumber="3">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </HelpStep>
-    <HelpStep stepNumber="4"> Lorem ipsum dolor sit amet. </HelpStep>
-    <HelpStep stepNumber="5">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur,
-      nisl nec ultricies lacinia, nisl nisl aliquet nisl, vel tincidunt nisl
-      nisl nec nunc.
-    </HelpStep>
-    <HelpStep stepNumber="6">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur,
-      nisl nec ultricies lacinia
-    </HelpStep>
-    <br />
-    <help-meanings :items="vocabulary" />
+    <HelpRankingEditor />
   </n-layout-sider>
+  <n-drawer
+    v-if="isMobile"
+    v-model:show="showHelpSider"
+    width="90%"
+    placement="right"
+    class="hidden-desktop"
+    :trap-focus="false"
+    to="#drawer-target"
+  >
+    <n-drawer-content title="About the ranking editor" closable>
+      <HelpRankingEditor />
+    </n-drawer-content>
+  </n-drawer>
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref } from 'vue';
+import { ref, type Ref, defineProps, onBeforeMount } from 'vue';
 import RankingEditor from '../components/RankingEditor.vue';
-import HelpStep from '../components/HelpStep.vue';
-import HelpMeanings from '../components/HelpMeanings.vue';
-import type { VocabularyItem } from '@/entities/VocabularyItem';
+import HelpRankingEditor from '@/components/HelpRankingEditor.vue';
 import { QuestionCircle } from '@vicons/fa';
 import {
   NLayoutContent,
@@ -65,6 +55,8 @@ import {
   NH1,
   NP,
   NButton,
+  NDrawer,
+  NDrawerContent,
   NSpace,
 } from 'naive-ui';
 // import beforeRouterLeave
@@ -72,29 +64,21 @@ import { onBeforeRouteLeave } from 'vue-router';
 
 const dialog = useDialog();
 
-const showHelpSider: Ref<boolean> = ref(true);
-const toggleHelp = () => {
+const props = defineProps<{
+  isMobile: Ref<boolean>;
+}>();
+
+const showHelpSider: Ref<boolean> = ref(false);
+
+onBeforeMount(() => {
+  if (!props.isMobile) {
+    showHelpSider.value = true;
+  }
+});
+
+const toggleHelp =   () => {
   showHelpSider.value = !showHelpSider.value;
 };
-
-const vocabulary: Array<VocabularyItem> = [
-  {
-    name: 'Index Prefix',
-    description:
-      'Required. This is an internal identifier for your research adaptation. You can concatenate your organization acronym with the current year.',
-    example: 'RDR22',
-  },
-  {
-    name: 'Scoring Steps',
-    description:
-      'Currently, you can select between 1 and 3 research steps. At least one is required.',
-  },
-  {
-    name: 'Indicators',
-    description:
-      'Select the indicators your adaptation will use. At least one is required.',
-  },
-];
 
 // Before leaving the route
 onBeforeRouteLeave((to, from, next) => {
@@ -115,5 +99,3 @@ onBeforeRouteLeave((to, from, next) => {
   });
 });
 </script>
-
-<style lang="scss" scoped></style>

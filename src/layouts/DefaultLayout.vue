@@ -1,7 +1,29 @@
 <template>
+  <n-layout-header v-if="isMobile" class="sticky-header">
+    <div class="layout-header">
+      <n-space align="center" justify="space-between" :wrap-item="false">
+        <n-image
+          :src="props.isDarkModeActive ? logoInvertedImg : logoImg"
+          height="30"
+        />
+        <n-dropdown
+          trigger="click"
+          placement="right"
+          size="small"
+          :options="menuOptions"
+        >
+          <n-button text type="primary">
+            <n-icon :size="30">
+              <Elementor />
+            </n-icon>
+          </n-button>
+        </n-dropdown>
+      </n-space>
+    </div>
+  </n-layout-header>
   <div class="">
     <n-layout has-sider class="layout-top">
-      <n-layout-sider width="20%">
+      <n-layout-sider class="hidden-mobile">
         <n-space align="center" justify="space-between" class="sidebar-logo">
           <n-image
             :src="props.isDarkModeActive ? logoInvertedImg : logoImg"
@@ -11,8 +33,8 @@
         </n-space>
         <n-menu :options="menuOptions" />
       </n-layout-sider>
-      <div class="layout-line">&nbsp;</div>
-      <router-view />
+      <div class="layout-line hidden-mobile">&nbsp;</div>
+      <router-view :is-mobile="isMobile" />
     </n-layout>
   </div>
   <n-layout-footer>
@@ -21,21 +43,43 @@
 </template>
 
 <script lang="ts" setup>
-import { h, defineProps, defineEmits } from 'vue';
+import {
+  h,
+  defineProps,
+  defineEmits,
+  onBeforeMount,
+  onUnmounted,
+  type Ref,
+  ref,
+} from 'vue';
 import { RouterLink } from 'vue-router';
 import logoImg from '../assets/lab-logo.svg';
 import logoInvertedImg from '../assets/lab-logo-white.svg';
 import AppFooter from '../components/AppFooter.vue';
-import { Sun, MoonRegular } from '@vicons/fa';
+import { Sun, MoonRegular, Elementor } from '@vicons/fa';
 import {
   NLayout,
   NLayoutSider,
   NMenu,
   NLayoutFooter,
+  NLayoutHeader,
+  NDropdown,
+  NButton,
   NImage,
   NIcon,
   NSpace,
 } from 'naive-ui';
+
+const isMobile: Ref<Boolean> = ref(false);
+
+onBeforeMount(() => {
+  window.addEventListener('resize', onResize);
+  onResize();
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', onResize);
+});
 
 const props = defineProps<{
   isDarkModeActive: boolean;
@@ -44,6 +88,14 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'changeTheme'): void;
 }>();
+
+function onResize() {
+  if (window.innerWidth > 768) {
+    isMobile.value = false;
+  } else {
+    isMobile.value = true;
+  }
+}
 
 const menuOptions = [
   {
@@ -103,6 +155,10 @@ const menuOptions = [
     key: 'go-company',
   },
   {
+    key: 'divider',
+    type: 'divider',
+  },
+  {
     key: 'toggle-theme',
     label: () =>
       h(
@@ -152,5 +208,15 @@ const menuOptions = [
   display: flex;
   padding-left: 30px;
   align-items: center;
+}
+
+.layout-header {
+  padding: 15px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 </style>

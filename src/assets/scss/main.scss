@@ -47,6 +47,18 @@ $secondary: #1c5275;
   }
 }
 
+.hidden-mobile{
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.hidden-desktop{
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
 .menu-link{
   font-weight: 600;
   font-size: 14px;
@@ -73,8 +85,12 @@ $secondary: #1c5275;
 }
 
 .section-content {
-  padding: 30px 30px 50px 30px;
+  padding: 15px 15px 30px 15px;
   margin: 0 auto;
+  // media query from 768px
+  @media screen and (min-width: 768px) {
+    padding: 30px 30px 50px 30px;
+  }
 }
 // .n-form-item-label__text {
 //   border-bottom: 2px solid #E07260;
