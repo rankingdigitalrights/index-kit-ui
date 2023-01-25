@@ -72,7 +72,6 @@ const outputJson = computed({
 });
 
 onBeforeMount(() => {
-  // console.log('onCreated');
   // download json indicators from public /data/indicators.json
   fetch('/data/indicators.json')
     .then((response) => response.json())
@@ -83,7 +82,6 @@ onBeforeMount(() => {
       let categories: Set<string> = new Set(
         data.map((indicator: IndicatorModel) => indicator.category)
       );
-      console.log(data);
       categories.forEach((category) => {
         // create a new object with key and label
         // key is the category name
@@ -99,7 +97,6 @@ onBeforeMount(() => {
           (indicator: IndicatorModel) =>
             indicator.category === category && !indicator.parent
         );
-        console.log('categoryIndicators', categoryIndicators);
         // for each indicator create a new object with key, label, and description
         categoryIndicators.forEach((indicator: IndicatorModel) => {
           let indicatorObj: TreeOption = {
@@ -135,7 +132,6 @@ onBeforeMount(() => {
         // add the category object to the treeData array
         treeData.value.push(categoryObj);
       });
-      console.log(treeData.value);
       loadingIndicators.value = false;
     });
 });
