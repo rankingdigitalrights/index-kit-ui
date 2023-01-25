@@ -5,6 +5,7 @@
         <n-image
           :src="props.isDarkModeActive ? logoInvertedImg : logoImg"
           height="30"
+          preview-disabled
         />
         <n-dropdown
           trigger="click"
