@@ -198,7 +198,7 @@ function submit() {
 function onCreateService() {
   return {
     // eslint-disable-next-line prettier/prettier
-    id: `${companyPrefixId.value}${companyModel.value.id}-s${nextServiceIdNumber.value.toString()}`,
+    id: `${companyPrefixId.value}${companyModel.value.id}s${nextServiceIdNumber.value.toString()}`,
     name: '',
     type: null,
     subtype: null,
