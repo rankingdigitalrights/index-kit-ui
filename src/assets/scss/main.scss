@@ -121,6 +121,18 @@ $secondary: #1c5275;
   }
 }
 
+.n-dynamic-input{
+  @media screen and (max-width: 768px) {
+  .n-dynamic-input-item{
+    flex-direction: column;
+    .n-dynamic-input-item__action{
+        margin-top: 10px;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
 
 // .n-tree:not(.n-tree--block-line) .n-tree-node:not(.n-tree-node--disabled) .n-tree-node-content:hover{
 //   background-color: transparent !important;

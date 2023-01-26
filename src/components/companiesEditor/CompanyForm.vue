@@ -598,7 +598,14 @@ defineExpose({ setEditCompany });
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  @media screen and (min-width: 769px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+  }
   .n-input,
   .n-input-group,
   .n-select {
@@ -610,6 +617,9 @@ defineExpose({ setEditCompany });
     }
     width: 100%;
     margin: 0 5px;
+    @media screen and (max-width: 768px) {
+      margin: 1px 0;
+    }
   }
 }
 </style>
