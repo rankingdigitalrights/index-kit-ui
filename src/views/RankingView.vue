@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref, defineProps, onBeforeMount } from 'vue';
+import { ref, type Ref, type InjectionKey, inject, onBeforeMount } from 'vue';
 import RankingEditor from '../components/RankingEditor.vue';
 import HelpRankingEditor from '@/components/HelpRankingEditor.vue';
 import { QuestionCircle } from '@vicons/fa';
@@ -64,14 +64,12 @@ import { onBeforeRouteLeave } from 'vue-router';
 
 const dialog = useDialog();
 
-const props = defineProps<{
-  isMobile: Ref<boolean>;
-}>();
+const isMobile = inject<Ref<Boolean> | undefined>('isMobile');
 
 const showHelpSider: Ref<boolean> = ref(false);
 
 onBeforeMount(() => {
-  if (!props.isMobile) {
+  if (!isMobile?.value) {
     showHelpSider.value = true;
   }
 });

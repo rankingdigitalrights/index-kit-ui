@@ -5,6 +5,7 @@ import {
   computed,
   defineProps,
   defineExpose,
+  inject,
   type Ref,
   type ComputedRef,
 } from 'vue';
@@ -66,6 +67,8 @@ const mode: Ref<'create' | 'edit'> = ref('create');
 const optionId: Ref<'auto' | 'custom' | 'name'> = ref('auto');
 
 const companyPrefixId: Ref<string> = ref('');
+
+const isMobile = inject<Ref<Boolean> | undefined>('isMobile');
 
 const companyModel: Ref<CompanyFormModel> = ref({
   id: optionId.value === 'auto' ? `c${props.nextNumberId}` : '',
@@ -406,7 +409,7 @@ defineExpose({ setEditCompany });
                   <n-radio value="custom">Let me enter the company ID</n-radio>
                 </n-space>
               </n-radio-group>
-              <n-grid :x-gap="24" :cols="2">
+              <n-grid :x-gap="24" :cols="isMobile ? 1 : 2">
                 <n-grid-item>
                   <n-input-group>
                     <n-input-group-label size="small">
@@ -435,7 +438,7 @@ defineExpose({ setEditCompany });
           // maxWidth: '800px',
         }"
       >
-        <n-grid :x-gap="24" :cols="2">
+        <n-grid :x-gap="24" :cols="isMobile ? 1 : 2">
           <n-grid-item>
             <n-form-item path="name">
               <template #label>
@@ -468,7 +471,7 @@ defineExpose({ setEditCompany });
             </n-form-item>
           </n-grid-item>
         </n-grid>
-        <n-grid :x-gap="24" :cols="2">
+        <n-grid :x-gap="24" :cols="isMobile ? 1 : 2">
           <n-grid-item>
             <n-form-item path="operationCompany">
               <template #label>

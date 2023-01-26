@@ -6,6 +6,7 @@
           :src="props.isDarkModeActive ? logoInvertedImg : logoImg"
           height="30"
           preview-disabled
+          @click="goToHome"
         />
         <n-dropdown
           trigger="click"
@@ -35,12 +36,10 @@
         <n-menu :options="menuOptions" />
       </n-layout-sider>
       <div class="layout-line hidden-mobile">&nbsp;</div>
-      <router-view :is-mobile="isMobile" />
+      <router-view />
     </n-layout>
   </div>
-  <n-layout-footer>
-    <AppFooter />
-  </n-layout-footer>
+  <AppFooter />
 </template>
 
 <script lang="ts" setup>
@@ -52,6 +51,7 @@ import {
   onUnmounted,
   type Ref,
   ref,
+  provide,
 } from 'vue';
 import { RouterLink } from 'vue-router';
 import logoImg from '../assets/lab-logo.svg';
@@ -62,7 +62,6 @@ import {
   NLayout,
   NLayoutSider,
   NMenu,
-  NLayoutFooter,
   NLayoutHeader,
   NDropdown,
   NButton,
@@ -72,6 +71,8 @@ import {
 } from 'naive-ui';
 
 const isMobile: Ref<Boolean> = ref(false);
+
+provide('isMobile', isMobile);
 
 onBeforeMount(() => {
   window.addEventListener('resize', onResize);
@@ -91,11 +92,16 @@ const emit = defineEmits<{
 }>();
 
 function onResize() {
-  if (window.innerWidth > 768) {
+  if (window.innerWidth >= 768) {
     isMobile.value = false;
   } else {
     isMobile.value = true;
   }
+}
+
+// TODO Go to home
+function goToHome() {
+  console.log('go to home');
 }
 
 const menuOptions = [
@@ -191,12 +197,6 @@ const menuOptions = [
 </script>
 
 <style lang="scss" scoped>
-.n-layout-footer {
-  background: #1c5275;
-  color: #fff;
-  padding: 24px;
-  height: 120px;
-}
 .layout-top {
   min-height: calc(100vh - 120px);
   display: flex;
