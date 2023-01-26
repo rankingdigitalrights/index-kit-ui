@@ -2,6 +2,19 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
+## How to update RDR Index Kit indicators for Ranking editor
+
+Update the `indicators.json` file in the `public/data` folder.
+
+## How to update ServiceType and ServiceSubtype
+
+Check the `src/entitites/ServiceType.ts` file. The select options are generated from the `ServiceType` and `ServiceSubtype` enums.
+
+## How to update CompanyType
+
+Check the `src/entitites/CompanyType.ts` file. The select options are generated from the `CompanyType` enum.
+
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
