@@ -5,7 +5,6 @@ import type { Service } from '../entities/Service';
 import CompanyTreeItem from './companiesEditor/CompanyTreeItem.vue';
 import ServiceTreeItem from './companiesEditor/ServiceTreeItem.vue';
 import CompanyForm from './companiesEditor/CompanyForm.vue';
-// import CompanyComponent from './CompanyComponent.vue';
 import { FileDownload, Upload, TimesCircleRegular } from '@vicons/fa';
 import fileDownload from 'js-file-download';
 import {

@@ -1,11 +1,13 @@
 <template>
   <n-layout-content :native-scrollbar="false" class="main-content" width="55%">
-    <div class="section-content">
+    <div id="drawer-target" class="section-content">
       <n-space align="start" justify="space-between">
         <n-h1>Companies Editor </n-h1>
-        <n-icon size="25" @click="toggleHelp">
-          <QuestionCircle />
-        </n-icon>
+        <n-button text type="primary">
+          <n-icon size="25" @click="toggleHelp">
+            <QuestionCircle />
+          </n-icon>
+        </n-button>
       </n-space>
       <n-p
         ><b
@@ -13,53 +15,46 @@
           information.</b
         ></n-p
       >
-      <CompaniesEditor />
+      <CompaniesEditor :is-mobile="isMobile" />
     </div>
   </n-layout-content>
-  <div class="layout-line" v-show="showHelpSider">&nbsp;</div>
+  <div class="layout-line hidden-mobile" v-show="!isMobile && showHelpSider">&nbsp;</div>
   <n-layout-sider
     width="25%"
-    v-show="showHelpSider"
-    class="section-content"
+    v-show="!isMobile && showHelpSider"
+    class="section-content hidden-mobile"
     :native-scrollbar="false"
   >
-    <n-h1>How to</n-h1>
-    <!-- lorem ipsum -->
-    <HelpStep stepNumber="1"> Lorem ipsum dolor si. </HelpStep>
-    <HelpStep stepNumber="2">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur,
-      nisl nec ultricies lacinia
-    </HelpStep>
-    <HelpStep stepNumber="3">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </HelpStep>
-    <HelpStep stepNumber="4"> Lorem ipsum dolor sit amet. </HelpStep>
-    <HelpStep stepNumber="5">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur,
-      nisl nec ultricies lacinia, nisl nisl aliquet nisl, vel tincidunt nisl
-      nisl nec nunc.
-    </HelpStep>
-    <HelpStep stepNumber="6">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur,
-      nisl nec ultricies lacinia
-    </HelpStep>
-    <br />
-    <help-meanings :items="vocabulary" />
+    <HelpCompaniesEditor />
   </n-layout-sider>
+  <n-drawer
+    v-if="isMobile"
+    v-model:show="showHelpSider"
+    width="85%"
+    placement="right"
+    class="hidden-desktop"
+    :trap-focus="false"
+    to="#drawer-target"
+  >
+    <n-drawer-content title="About the company editor" closable>
+      <HelpCompaniesEditor />
+    </n-drawer-content>
+  </n-drawer>
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref } from 'vue';
+import { ref, type Ref, inject, onBeforeMount } from 'vue';
 import CompaniesEditor from '../components/CompaniesEditor.vue';
-import HelpStep from '../components/HelpStep.vue';
-import HelpMeanings from '../components/HelpMeanings.vue';
-import type { VocabularyItem } from '@/entities/VocabularyItem';
+import HelpCompaniesEditor from '@/components/HelpCompaniesEditor.vue';
 import { QuestionCircle } from '@vicons/fa';
 import {
   useDialog,
   NIcon,
   NLayoutContent,
   NLayoutSider,
+  NDrawer,
+  NDrawerContent,
+  NButton,
   NH1,
   NP,
   NSpace,
@@ -68,29 +63,19 @@ import { onBeforeRouteLeave } from 'vue-router';
 
 const dialog = useDialog();
 
-const showHelpSider: Ref<boolean> = ref(true);
+const isMobile = inject<Ref<Boolean> | undefined>('isMobile');
+
+const showHelpSider: Ref<boolean> = ref(false);
+
+onBeforeMount(() => {
+  if (!isMobile?.value) {
+    showHelpSider.value = true;
+  }
+});
+
 const toggleHelp = () => {
   showHelpSider.value = !showHelpSider.value;
 };
-
-const vocabulary: Array<VocabularyItem> = [
-  {
-    name: 'Index Prefix',
-    description:
-      'Required. This is an internal identifier for your research adaptation. You can concatenate your organization acronym with the current year.',
-    example: 'RDR22',
-  },
-  {
-    name: 'Scoring Steps',
-    description:
-      'Currently, you can select between 1 and 3 research steps. At least one is required.',
-  },
-  {
-    name: 'Indicators',
-    description:
-      'Select the indicators your adaptation will use. At least one is required.',
-  },
-];
 
 // Before leaving the route
 onBeforeRouteLeave((to, from, next) => {

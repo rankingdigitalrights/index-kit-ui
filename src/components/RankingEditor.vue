@@ -28,7 +28,7 @@ import {
   NSkeleton,
   NText,
 } from 'naive-ui';
-import { AngleRight, FileDownload, Upload, Question } from '@vicons/fa';
+import { AngleRight, FileDownload, Upload, QuestionCircle } from '@vicons/fa';
 // import { useMessage } from 'naive-ui'
 import type { RankingModel } from '../entities/RankingModel';
 import type { IndicatorModel } from '../entities/IndicatorModel';
@@ -72,7 +72,6 @@ const outputJson = computed({
 });
 
 onBeforeMount(() => {
-  // console.log('onCreated');
   // download json indicators from public /data/indicators.json
   fetch('/data/indicators.json')
     .then((response) => response.json())
@@ -83,7 +82,6 @@ onBeforeMount(() => {
       let categories: Set<string> = new Set(
         data.map((indicator: IndicatorModel) => indicator.category)
       );
-      console.log('categories', categories);
       categories.forEach((category) => {
         // create a new object with key and label
         // key is the category name
@@ -96,17 +94,37 @@ onBeforeMount(() => {
         };
         // filter the indicators by category
         let categoryIndicators = data.filter(
-          (indicator: IndicatorModel) => indicator.category === category
+          (indicator: IndicatorModel) =>
+            indicator.category === category && !indicator.parent
         );
         // for each indicator create a new object with key, label, and description
         categoryIndicators.forEach((indicator: IndicatorModel) => {
           let indicatorObj: TreeOption = {
-            key: indicator.id?.toUpperCase(),
+            key: indicator.name,
             addPrefix: true,
             label: indicator.label,
-            description: indicator.description,
-            guidance: indicator.guidance,
+            description: !indicator.isParent ? indicator.description : null,
+            guidance: !indicator.isParent ? indicator.guidance : null,
           };
+          if (indicator.isParent) {
+            // filter the indicators by parent
+            let childrenIndicators = data.filter((child: IndicatorModel) => {
+              return child.parent === indicator.id;
+            });
+            if (childrenIndicators.length > 0) {
+              indicatorObj.children = [];
+              childrenIndicators.forEach((child: IndicatorModel) => {
+                let childObj: TreeOption = {
+                  key: child.name,
+                  addPrefix: true,
+                  label: child.label,
+                  description: child.description,
+                  guidance: child.guidance,
+                };
+                indicatorObj.children?.push(childObj);
+              });
+            }
+          }
           // add the indicator object to the category object
           if (categoryObj.children) categoryObj.children.push(indicatorObj);
           else categoryObj.children = [indicatorObj];
@@ -153,9 +171,6 @@ function renderPrefix({ option }: { option: TreeOption }) {
       },
       { default: () => option.key }
     );
-  // else return h('b', {}, `${option.key} -`);
-  // else return null;
-  // else return h('b', { style: { marginTop: '1px' } }, `${option.key}`);
   else
     return h(
       NTag,
@@ -223,8 +238,8 @@ function renderLabel({ option }: { option: TreeOption }) {
                   h(
                     NIcon,
                     {
-                      size: '10',
-                      component: Question,
+                      size: '12',
+                      component: QuestionCircle,
                     },
                     {}
                   ),
@@ -236,19 +251,6 @@ function renderLabel({ option }: { option: TreeOption }) {
     }
   );
 }
-
-// function renderSuffix({ option }: { option: TreeOption }) {
-//   if (option.guidance)
-//     return h(
-//      NIcon,
-//      {
-//         size: 'small',
-//         component: QuestionCircle,
-//      },
-//      {}
-//     );
-//   else return null;
-// }
 
 function inputFile() {
   inputFileRef.value?.click();
@@ -284,11 +286,19 @@ function onFileChange(e: Event) {
   }
 }
 
+function onlyAlphaNumeric(value: string): boolean {
+  // allow only alphanumeric characters
+  if (value === '') return true;
+  let test: boolean = /^[a-zA-Z0-9]+$/.test(value);
+  return test;
+}
+
 const formRules: FormRules = {
   indexPrefix: {
     required: true,
     message: 'Index Prefix is required',
     trigger: 'blur',
+    whitespace: true,
   },
   scoringSteps: {
     type: 'array',
@@ -326,7 +336,11 @@ const formRules: FormRules = {
           <template #label>
             <span class="custom-label">Index Prefix</span>
           </template>
-          <n-input v-model:value="model.indexPrefix" placeholder="RDR21M" />
+          <n-input
+            v-model:value="model.indexPrefix"
+            :allow-input="onlyAlphaNumeric"
+            placeholder="RDR21M"
+          />
         </n-form-item>
         <n-form-item :span="14" path="scoringSteps">
           <template #label>
@@ -334,9 +348,9 @@ const formRules: FormRules = {
           </template>
           <n-checkbox-group v-model:value="model.scoringSteps">
             <n-space>
-              <n-checkbox size="large" value="1">Step 1</n-checkbox>
-              <n-checkbox size="large" value="2">Step 2</n-checkbox>
-              <n-checkbox size="large" value="3">Step 3</n-checkbox>
+              <n-checkbox size="large" :value="1">Step 1</n-checkbox>
+              <n-checkbox size="large" :value="2">Step 2</n-checkbox>
+              <n-checkbox size="large" :value="3">Step 3</n-checkbox>
             </n-space>
           </n-checkbox-group>
         </n-form-item>

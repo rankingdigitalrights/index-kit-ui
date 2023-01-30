@@ -5,6 +5,7 @@ import {
   computed,
   defineProps,
   defineExpose,
+  inject,
   type Ref,
   type ComputedRef,
 } from 'vue';
@@ -67,6 +68,8 @@ const optionId: Ref<'auto' | 'custom' | 'name'> = ref('auto');
 
 const companyPrefixId: Ref<string> = ref('');
 
+const isMobile = inject<Ref<Boolean> | undefined>('isMobile');
+
 const companyModel: Ref<CompanyFormModel> = ref({
   id: optionId.value === 'auto' ? `c${props.nextNumberId}` : '',
   name: '',
@@ -120,8 +123,11 @@ const formRules: FormRules = {
 
 // METHODS
 
-function noSideSpace(value: string) {
-  return !/ /g.test(value);
+function onlyAlphaNumeric(value: string): boolean {
+  // allow only alphanumeric characters
+  if (value === '') return true;
+  let test: boolean = /^[a-zA-Z0-9]+$/.test(value);
+  return test;
 }
 
 function submit() {
@@ -192,7 +198,7 @@ function submit() {
 function onCreateService() {
   return {
     // eslint-disable-next-line prettier/prettier
-    id: `${companyPrefixId.value}${companyModel.value.id}-s${nextServiceIdNumber.value.toString()}`,
+    id: `${companyPrefixId.value}${companyModel.value.id}s${nextServiceIdNumber.value.toString()}`,
     name: '',
     type: null,
     subtype: null,
@@ -403,7 +409,7 @@ defineExpose({ setEditCompany });
                   <n-radio value="custom">Let me enter the company ID</n-radio>
                 </n-space>
               </n-radio-group>
-              <n-grid :x-gap="24" :cols="2">
+              <n-grid :x-gap="24" :cols="isMobile ? 1 : 2">
                 <n-grid-item>
                   <n-input-group>
                     <n-input-group-label size="small">
@@ -411,7 +417,7 @@ defineExpose({ setEditCompany });
                     </n-input-group-label>
                     <n-input
                       size="small"
-                      :allow-input="noSideSpace"
+                      :allow-input="onlyAlphaNumeric"
                       v-model:value="companyPrefixId"
                       placeholder="Ex. com-"
                     />
@@ -432,7 +438,7 @@ defineExpose({ setEditCompany });
           // maxWidth: '800px',
         }"
       >
-        <n-grid :x-gap="24" :cols="2">
+        <n-grid :x-gap="24" :cols="isMobile ? 1 : 2">
           <n-grid-item>
             <n-form-item path="name">
               <template #label>
@@ -456,7 +462,7 @@ defineExpose({ setEditCompany });
                   }}</n-input-group-label>
                   <n-input
                     v-model:value="companyModel.id"
-                    :allow-input="noSideSpace"
+                    :allow-input="onlyAlphaNumeric"
                     placeholder="Ex. ARD001"
                   />
                 </n-input-group>
@@ -465,7 +471,7 @@ defineExpose({ setEditCompany });
             </n-form-item>
           </n-grid-item>
         </n-grid>
-        <n-grid :x-gap="24" :cols="2">
+        <n-grid :x-gap="24" :cols="isMobile ? 1 : 2">
           <n-grid-item>
             <n-form-item path="operationCompany">
               <template #label>
@@ -523,7 +529,7 @@ defineExpose({ setEditCompany });
                   v-model:value="value.id"
                   type="text"
                   placeholder="ID *"
-                  :allow-input="noSideSpace"
+                  :allow-input="onlyAlphaNumeric"
                 />
                 <n-input
                   v-model:value="value.name"
@@ -592,7 +598,14 @@ defineExpose({ setEditCompany });
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  @media screen and (min-width: 769px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+  }
   .n-input,
   .n-input-group,
   .n-select {
@@ -604,6 +617,9 @@ defineExpose({ setEditCompany });
     }
     width: 100%;
     margin: 0 5px;
+    @media screen and (max-width: 768px) {
+      margin: 1px 0;
+    }
   }
 }
 </style>
