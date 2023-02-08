@@ -125,25 +125,11 @@ const menuOptions = [
         RouterLink,
         {
           to: {
-            name: 'about',
-          },
-          class: 'menu-link',
-        },
-        { default: () => 'About' }
-      ),
-    key: 'go-about',
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
             name: 'ranking',
           },
           class: 'menu-link',
         },
-        { default: () => 'Ranking editor' }
+        { default: () => 'General settings' }
       ),
     key: 'go-ranking',
   },
@@ -157,9 +143,23 @@ const menuOptions = [
           },
           class: 'menu-link',
         },
-        { default: () => 'Companies editor' }
+        { default: () => 'Companies and services' }
       ),
     key: 'go-company',
+  },
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            name: 'about',
+          },
+          class: 'menu-link',
+        },
+        { default: () => 'Workspace setup' }
+      ),
+    key: 'go-about',
   },
   {
     key: 'divider',
