@@ -74,6 +74,7 @@ const isMobile = inject<Ref<Boolean> | undefined>('isMobile');
 .grid-item {
   display: flex;
   align-items: center;
+  text-align: left;
   @media (max-width: 767px) {
     text-align: center;
     justify-content: center;

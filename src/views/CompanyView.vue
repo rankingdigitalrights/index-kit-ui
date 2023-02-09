@@ -18,7 +18,9 @@
       <CompaniesEditor :is-mobile="isMobile" />
     </div>
   </n-layout-content>
-  <div class="layout-line hidden-mobile" v-show="!isMobile && showHelpSider">&nbsp;</div>
+  <div class="layout-line hidden-mobile" v-show="!isMobile && showHelpSider">
+    &nbsp;
+  </div>
   <n-layout-sider
     width="25%"
     v-show="!isMobile && showHelpSider"

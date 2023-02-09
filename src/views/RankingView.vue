@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref, type InjectionKey, inject, onBeforeMount } from 'vue';
+import { ref, type Ref, inject, onBeforeMount } from 'vue';
 import RankingEditor from '../components/RankingEditor.vue';
 import HelpRankingEditor from '@/components/HelpRankingEditor.vue';
 import { QuestionCircle } from '@vicons/fa';
@@ -74,7 +74,7 @@ onBeforeMount(() => {
   }
 });
 
-const toggleHelp =   () => {
+const toggleHelp = () => {
   showHelpSider.value = !showHelpSider.value;
 };
 
