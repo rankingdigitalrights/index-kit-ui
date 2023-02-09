@@ -36,7 +36,7 @@ import {
   type FormRules,
   type FormValidationError,
 } from 'naive-ui';
-import type { CompanyFormModel } from '@/entities/Company';
+import type { CompanyFormModel, CompanyType } from '@/entities/Company';
 import { Company } from '@/entities/Company';
 import { companyTypeArray } from '@/entities/Company';
 import {
@@ -74,7 +74,7 @@ const companyModel: Ref<CompanyFormModel> = ref({
   id: optionId.value === 'auto' ? `c${props.nextNumberId}` : '',
   name: '',
   group: '',
-  type: 'telecom',
+  type: 'telecom' as CompanyType,
   operationCompany: '',
   services: [],
 });
@@ -546,6 +546,7 @@ defineExpose({ setEditCompany });
                   v-model:value="value.subtype"
                   :options="serviceSubtypeArray"
                   :consistent-menu-width="false"
+                  :clearable="true"
                   placeholder="Sub-type"
                 />
               </div>

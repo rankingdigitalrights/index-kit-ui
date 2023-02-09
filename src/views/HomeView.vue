@@ -17,18 +17,16 @@ import { NLayoutContent, NH1, NP } from 'naive-ui';
       </n-p>
       <n-p>
         The RDR Index Toolkit UI is a web tool created to help independent
-        researchers and organizations to generate configuration files needed
-        to deploy the data infrastructure. All data is handled in the web
-        browser. No one, neither RDR nor any other entity, stores or has access
-        to the information entered in the fields present in this tool.
+        researchers and organizations to generate configuration files needed to
+        deploy the data infrastructure. All data is handled in the web browser.
+        No one, neither RDR nor any other entity, stores or has access to the
+        information entered in the fields present in this tool.
       </n-p>
       <n-p>
-        For more information about the RDR Methodology and research process,
-        go to our
-        <a
-          href="https://rankingdigitalrights.org/research-lab/"
-          target="_blank"
-        >Research Lab</a
+        For more information about the RDR Methodology and research process, go
+        to our
+        <a href="https://rankingdigitalrights.org/research-lab/" target="_blank"
+          >Research Lab</a
         >.
       </n-p>
     </div>

@@ -54,12 +54,12 @@ export class Company {
   }
 }
 
-interface CompanyTypeObject {
+export type CompanyTypeObject = {
   value: CompanyType;
   label: string;
-}
+};
 
-export const companyTypeArray: Array<CompanyTypeObject> = [
+export const companyTypeArray = [
   { value: 'telecom', label: 'Telecom company' },
   { value: 'internet', label: 'Internet platform' },
 ];

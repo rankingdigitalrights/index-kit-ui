@@ -39,12 +39,12 @@ export type ServiceType =
 
 export type ServiceSubtype = null | 'prepaid' | 'postpaid';
 
-type ServiceTypeObject = {
+export type ServiceTypeObject = {
   value: ServiceType;
   label: string;
 };
 
-type ServiceSubtypeObject = {
+export type ServiceSubtypeObject = {
   value: ServiceSubtype;
   label: string;
 };
@@ -64,8 +64,8 @@ export const serviceTypeArray: ServiceTypeObject[] = [
   { value: 'other', label: 'Other type of service' },
 ];
 
-export const serviceSubtypeArray: ServiceSubtypeObject[] = [
-  { value: null, label: 'No subtype' },
+export const serviceSubtypeArray = [
+  // { value: null, label: 'No subtype' },
   { value: 'prepaid', label: 'Prepaid Service' },
   { value: 'postpaid', label: 'Postpaid Service' },
 ];
