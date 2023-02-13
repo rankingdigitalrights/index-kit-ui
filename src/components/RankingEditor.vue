@@ -73,7 +73,7 @@ const outputJson = computed({
 
 onBeforeMount(() => {
   // download json indicators from public /data/indicators.json
-  fetch('/data/indicators.json')
+  fetch('./data/indicators.json')
     .then((response) => response.json())
     .then((data) => {
       // data is an array of objects we call indicators
