@@ -58,6 +58,16 @@ npm run build
 npm run lint
 ```
 
+## Deployment
+
+The build will generate static files in the `dist` folder. You can deploy it to any static hosting service. But if you want to deploy it after a path prefix, you need to set the `base` option in `vite.config.ts`
+
+```js
+export default defineConfig({
+  // ...
+  base: '/my-deploy-path/'
+})
+```
 
 ----
 
