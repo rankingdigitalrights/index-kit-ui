@@ -60,7 +60,7 @@ const model: Ref<RankingModel> = ref({
     includeResults: true,
     dataColWidth: 200,
     firstStepNr: 1,
-    lastStepNr: 1,
+    lastStepNr: 3,
   },
 });
 

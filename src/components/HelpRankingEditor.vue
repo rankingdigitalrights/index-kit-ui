@@ -1,23 +1,20 @@
 <template>
   <n-h1>How to</n-h1>
   <!-- lorem ipsum -->
-  <HelpStep stepNumber="1"> Lorem ipsum dolor si. </HelpStep>
+  <HelpStep stepNumber="1">
+    If you're creating a new file, jump to step 2. Otherwise, if you want to continue editing an existing file you've already created, click on "Load JSON" toward the bottom of your screen and select the correct file. When you finish editing it, you must redownload it.
+  </HelpStep>
   <HelpStep stepNumber="2">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur,
-    nisl nec ultricies lacinia
+    Fill in the Index Prefix, the short word or acronym that identifies your adaptation internally.
   </HelpStep>
   <HelpStep stepNumber="3">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Select the scoring steps that your adaptation will include. If there's just one researcher involved, 1 step should be fine. With two researchers, it is recommended to select all three steps.
   </HelpStep>
-  <HelpStep stepNumber="4"> Lorem ipsum dolor sit amet. </HelpStep>
+  <HelpStep stepNumber="4">
+    Select at least one indicator. You can explore them by expanding the categories using the small arrow to the left of each listed category.
+  </HelpStep>
   <HelpStep stepNumber="5">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur,
-    nisl nec ultricies lacinia, nisl nisl aliquet nisl, vel tincidunt nisl nec
-    nunc.
-  </HelpStep>
-  <HelpStep stepNumber="6">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur,
-    nisl nec ultricies lacinia
+    Once you have defined the Index Prefix, scoring steps, and indicators, you can download the configuration file by clicking on “Download JSON.” Remember to save the file on your hard drive.
   </HelpStep>
   <br />
   <help-meanings :items="vocabulary" />

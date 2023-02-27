@@ -1,339 +1,111 @@
 <template>
   <n-layout-content :native-scrollbar="false" width="55%">
     <div class="section-content">
-      <n-h1>About this toolkit</n-h1>
-      <n-p>This is an about page.</n-p>
-      <!-- BIG LOREM IPSUM -->
+      <n-h1>Workspace setup</n-h1>
       <n-p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus
-        dui orci, eget tincidunt augue semper eget. Aenean commodo felis aliquam
-        nisi dictum semper. Donec euismod ligula a ligula faucibus pulvinar.
-        Aliquam mollis semper tempor. Curabitur ac augue magna. Aenean finibus
-        velit eu eros aliquam lobortis. Nullam eget pulvinar risus. In in
-        aliquet magna. Pellentesque porta tempor nisl, eu pellentesque orci
-        dapibus eget. Donec laoreet congue iaculis. Nullam cursus lorem quis
-        pulvinar semper. Sed tincidunt dolor nisl, ut pretium neque molestie
-        non. In pellentesque ut purus nec pulvinar. Donec volutpat purus in
-        tellus semper, quis dapibus quam molestie. Nam libero nisi, pulvinar et
-        arcu id, auctor consequat magna. Vestibulum vehicula elementum
-        tincidunt. Cras rutrum purus a massa faucibus, vitae interdum sapien
-        imperdiet. Pellentesque at tellus et dolor ornare volutpat. Morbi
-        facilisis feugiat risus, in rutrum nibh sollicitudin vitae. Nullam mi
-        nulla, maximus vel tortor et, venenatis tempus risus. In congue dui
-        nisi, in elementum tellus vestibulum sagittis. Etiam molestie cursus
-        volutpat. Suspendisse malesuada ac leo et consectetur. Donec imperdiet
-        massa non porta pharetra. Duis lorem nisl, ultricies ac massa id,
-        hendrerit pretium lorem. Cras tristique, elit lacinia congue bibendum,
-        ipsum felis mattis libero, vel convallis quam tortor id felis. Etiam
-        imperdiet porta tellus, id sollicitudin nulla malesuada quis. Aenean
-        tempor turpis quis dui faucibus feugiat. Fusce sed pellentesque augue,
-        quis tempus lectus. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Sed molestie orci posuere dapibus cursus. Morbi eu tellus
-        nibh. Integer condimentum fermentum augue, sed feugiat nulla pharetra
-        et. Praesent a sagittis nulla, a congue tellus. Maecenas nec neque id
-        sapien pretium pulvinar. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nulla facilisi. Nulla facilisi. Donec vel elementum
-        diam, in ornare ligula. Donec facilisis convallis ex et pretium. Proin
-        nulla lorem, mattis sed vestibulum a, pharetra et enim. Vivamus
-        condimentum non ante et blandit. Vestibulum velit quam, efficitur non
-        velit eu, interdum elementum dolor. Quisque eu vestibulum nunc, a
-        interdum enim. Nulla laoreet egestas arcu. In rutrum felis lobortis
-        pellentesque faucibus. Maecenas lobortis quam a placerat dapibus. Sed
-        blandit eu ex ac varius. Morbi ultrices ut orci suscipit sodales.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-        cubilia curae; Nam eros mi, tincidunt id nibh sed, sollicitudin porta
-        nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
-        Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
-        vel accumsan ex. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Etiam tempus dui orci, eget tincidunt augue semper eget. Aenean
-        commodo felis aliquam nisi dictum semper. Donec euismod ligula a ligula
-        faucibus pulvinar. Aliquam mollis semper tempor. Curabitur ac augue
-        magna. Aenean finibus velit eu eros aliquam lobortis. Nullam eget
-        pulvinar risus. In in aliquet magna. Pellentesque porta tempor nisl, eu
-        pellentesque orci dapibus eget. Donec laoreet congue iaculis. Nullam
-        cursus lorem quis pulvinar semper. Sed tincidunt dolor nisl, ut pretium
-        neque molestie non. In pellentesque ut purus nec pulvinar. Donec
-        volutpat purus in tellus semper, quis dapibus quam molestie. Nam libero
-        nisi, pulvinar et arcu id, auctor consequat magna. Vestibulum vehicula
-        elementum tincidunt. Cras rutrum purus a massa faucibus, vitae interdum
-        sapien imperdiet. Pellentesque at tellus et dolor ornare volutpat. Morbi
-        facilisis feugiat risus, in rutrum nibh sollicitudin vitae. Nullam mi
-        nulla, maximus vel tortor et, venenatis tempus risus. In congue dui
-        nisi, in elementum tellus vestibulum sagittis. Etiam molestie cursus
-        volutpat. Suspendisse malesuada ac leo et consectetur. Donec imperdiet
-        massa non porta pharetra. Duis lorem nisl, ultricies ac massa id,
-        hendrerit pretium lorem. Cras tristique, elit lacinia congue bibendum,
-        ipsum felis mattis libero, vel convallis quam tortor id felis. Etiam
-        imperdiet porta tellus, id sollicitudin nulla malesuada quis. Aenean
-        tempor turpis quis dui faucibus feugiat. Fusce sed pellentesque augue,
-        quis tempus lectus. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Sed molestie orci posuere dapibus cursus. Morbi eu tellus
-        nibh. Integer condimentum fermentum augue, sed feugiat nulla pharetra
-        et. Praesent a sagittis nulla, a congue tellus. Maecenas nec neque id
-        sapien pretium pulvinar. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nulla facilisi. Nulla facilisi. Donec vel elementum
-        diam, in ornare ligula. Donec facilisis convallis ex et pretium. Proin
-        nulla lorem, mattis sed vestibulum a, pharetra et enim. Vivamus
-        condimentum non ante et blandit. Vestibulum velit quam, efficitur non
-        velit eu, interdum elementum dolor. Quisque eu vestibulum nunc, a
-        interdum enim. Nulla laoreet egestas arcu. In rutrum felis lobortis
-        pellentesque faucibus. Maecenas lobortis quam a placerat dapibus. Sed
-        blandit eu ex ac varius. Morbi ultrices ut orci suscipit sodales.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-        cubilia curae; Nam eros mi, tincidunt id nibh sed, sollicitudin porta
-        nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
-        Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
-        vel accumsan ex.
+        Now that you’ve created all of your configuration files, you need to ensure  you have somewhere to store all of this data and where all data collection spreadsheets will be generated. You will need a Google account to use the following required tools: Google Drive and Google Apps Scripts.
+      </n-p>
+      <n-h2>
+        Google Drive folder
+      </n-h2>
+      <n-p>
+        Go to Google Drive and create a new folder. Inside of this folder you will create all your data collection and scoring sheets. When you have your folder ready, do right click on it and select “Get link.”
+      </n-p>
+      <n-image
+        :src="pic01"
+      />
+      <n-p>
+        You will see a link like this:
       </n-p>
       <n-p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus
-        dui orci, eget tincidunt augue semper eget. Aenean commodo felis aliquam
-        nisi dictum semper. Donec euismod ligula a ligula faucibus pulvinar.
-        Aliquam mollis semper tempor. Curabitur ac augue magna. Aenean finibus
-        velit eu eros aliquam lobortis. Nullam eget pulvinar risus. In in
-        aliquet magna. Pellentesque porta tempor nisl, eu pellentesque orci
-        dapibus eget. Donec laoreet congue iaculis. Nullam cursus lorem quis
-        pulvinar semper. Sed tincidunt dolor nisl, ut pretium neque molestie
-        non. In pellentesque ut purus nec pulvinar. Donec volutpat purus in
-        tellus semper, quis dapibus quam molestie. Nam libero nisi, pulvinar et
-        arcu id, auctor consequat magna. Vestibulum vehicula elementum
-        tincidunt. Cras rutrum purus a massa faucibus, vitae interdum sapien
-        imperdiet. Pellentesque at tellus et dolor ornare volutpat. Morbi
-        facilisis feugiat risus, in rutrum nibh sollicitudin vitae. Nullam mi
-        nulla, maximus vel tortor et, venenatis tempus risus. In congue dui
-        nisi, in elementum tellus vestibulum sagittis. Etiam molestie cursus
-        volutpat. Suspendisse malesuada ac leo et consectetur. Donec imperdiet
-        massa non porta pharetra. Duis lorem nisl, ultricies ac massa id,
-        hendrerit pretium lorem. Cras tristique, elit lacinia congue bibendum,
-        ipsum felis mattis libero, vel convallis quam tortor id felis. Etiam
-        imperdiet porta tellus, id sollicitudin nulla malesuada quis. Aenean
-        tempor turpis quis dui faucibus feugiat. Fusce sed pellentesque augue,
-        quis tempus lectus. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Sed molestie orci posuere dapibus cursus. Morbi eu tellus
-        nibh. Integer condimentum fermentum augue, sed feugiat nulla pharetra
-        et. Praesent a sagittis nulla, a congue tellus. Maecenas nec neque id
-        sapien pretium pulvinar. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nulla facilisi. Nulla facilisi. Donec vel elementum
-        diam, in ornare ligula. Donec facilisis convallis ex et pretium. Proin
-        nulla lorem, mattis sed vestibulum a, pharetra et enim. Vivamus
-        condimentum non ante et blandit. Vestibulum velit quam, efficitur non
-        velit eu, interdum elementum dolor. Quisque eu vestibulum nunc, a
-        interdum enim. Nulla laoreet egestas arcu. In rutrum felis lobortis
-        pellentesque faucibus. Maecenas lobortis quam a placerat dapibus. Sed
-        blandit eu ex ac varius. Morbi ultrices ut orci suscipit sodales.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-        cubilia curae; Nam eros mi, tincidunt id nibh sed, sollicitudin porta
-        nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
-        Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
-        vel accumsan ex. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Etiam tempus dui orci, eget tincidunt augue semper eget. Aenean
-        commodo felis aliquam nisi dictum semper. Donec euismod ligula a ligula
-        faucibus pulvinar. Aliquam mollis semper tempor. Curabitur ac augue
-        magna. Aenean finibus velit eu eros aliquam lobortis. Nullam eget
-        pulvinar risus. In in aliquet magna. Pellentesque porta tempor nisl, eu
-        pellentesque orci dapibus eget. Donec laoreet congue iaculis. Nullam
-        cursus lorem quis pulvinar semper. Sed tincidunt dolor nisl, ut pretium
-        neque molestie non. In pellentesque ut purus nec pulvinar. Donec
-        volutpat purus in tellus semper, quis dapibus quam molestie. Nam libero
-        nisi, pulvinar et arcu id, auctor consequat magna. Vestibulum vehicula
-        elementum tincidunt. Cras rutrum purus a massa faucibus, vitae interdum
-        sapien imperdiet. Pellentesque at tellus et dolor ornare volutpat. Morbi
-        facilisis feugiat risus, in rutrum nibh sollicitudin vitae. Nullam mi
-        nulla, maximus vel tortor et, venenatis tempus risus. In congue dui
-        nisi, in elementum tellus vestibulum sagittis. Etiam molestie cursus
-        volutpat. Suspendisse malesuada ac leo et consectetur. Donec imperdiet
-        massa non porta pharetra. Duis lorem nisl, ultricies ac massa id,
-        hendrerit pretium lorem. Cras tristique, elit lacinia congue bibendum,
-        ipsum felis mattis libero, vel convallis quam tortor id felis. Etiam
-        imperdiet porta tellus, id sollicitudin nulla malesuada quis. Aenean
-        tempor turpis quis dui faucibus feugiat. Fusce sed pellentesque augue,
-        quis tempus lectus. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Sed molestie orci posuere dapibus cursus. Morbi eu tellus
-        nibh. Integer condimentum fermentum augue, sed feugiat nulla pharetra
-        et. Praesent a sagittis nulla, a congue tellus. Maecenas nec neque id
-        sapien pretium pulvinar. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nulla facilisi. Nulla facilisi. Donec vel elementum
-        diam, in ornare ligula. Donec facilisis convallis ex et pretium. Proin
-        nulla lorem, mattis sed vestibulum a, pharetra et enim. Vivamus
-        condimentum non ante et blandit. Vestibulum velit quam, efficitur non
-        velit eu, interdum elementum dolor. Quisque eu vestibulum nunc, a
-        interdum enim. Nulla laoreet egestas arcu. In rutrum felis lobortis
-        pellentesque faucibus. Maecenas lobortis quam a placerat dapibus. Sed
-        blandit eu ex ac varius. Morbi ultrices ut orci suscipit sodales.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-        cubilia curae; Nam eros mi, tincidunt id nibh sed, sollicitudin porta
-        nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
-        Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
-        vel accumsan ex.
+        https://drive.google.com/drive/folders/<span style="color:red">12QxxUY31XX9D2rwnVIJ-e56GApbi99NV</span>?usp=sharing
       </n-p>
       <n-p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus
-        dui orci, eget tincidunt augue semper eget. Aenean commodo felis aliquam
-        nisi dictum semper. Donec euismod ligula a ligula faucibus pulvinar.
-        Aliquam mollis semper tempor. Curabitur ac augue magna. Aenean finibus
-        velit eu eros aliquam lobortis. Nullam eget pulvinar risus. In in
-        aliquet magna. Pellentesque porta tempor nisl, eu pellentesque orci
-        dapibus eget. Donec laoreet congue iaculis. Nullam cursus lorem quis
-        pulvinar semper. Sed tincidunt dolor nisl, ut pretium neque molestie
-        non. In pellentesque ut purus nec pulvinar. Donec volutpat purus in
-        tellus semper, quis dapibus quam molestie. Nam libero nisi, pulvinar et
-        arcu id, auctor consequat magna. Vestibulum vehicula elementum
-        tincidunt. Cras rutrum purus a massa faucibus, vitae interdum sapien
-        imperdiet. Pellentesque at tellus et dolor ornare volutpat. Morbi
-        facilisis feugiat risus, in rutrum nibh sollicitudin vitae. Nullam mi
-        nulla, maximus vel tortor et, venenatis tempus risus. In congue dui
-        nisi, in elementum tellus vestibulum sagittis. Etiam molestie cursus
-        volutpat. Suspendisse malesuada ac leo et consectetur. Donec imperdiet
-        massa non porta pharetra. Duis lorem nisl, ultricies ac massa id,
-        hendrerit pretium lorem. Cras tristique, elit lacinia congue bibendum,
-        ipsum felis mattis libero, vel convallis quam tortor id felis. Etiam
-        imperdiet porta tellus, id sollicitudin nulla malesuada quis. Aenean
-        tempor turpis quis dui faucibus feugiat. Fusce sed pellentesque augue,
-        quis tempus lectus. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Sed molestie orci posuere dapibus cursus. Morbi eu tellus
-        nibh. Integer condimentum fermentum augue, sed feugiat nulla pharetra
-        et. Praesent a sagittis nulla, a congue tellus. Maecenas nec neque id
-        sapien pretium pulvinar. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nulla facilisi. Nulla facilisi. Donec vel elementum
-        diam, in ornare ligula. Donec facilisis convallis ex et pretium. Proin
-        nulla lorem, mattis sed vestibulum a, pharetra et enim. Vivamus
-        condimentum non ante et blandit. Vestibulum velit quam, efficitur non
-        velit eu, interdum elementum dolor. Quisque eu vestibulum nunc, a
-        interdum enim. Nulla laoreet egestas arcu. In rutrum felis lobortis
-        pellentesque faucibus. Maecenas lobortis quam a placerat dapibus. Sed
-        blandit eu ex ac varius. Morbi ultrices ut orci suscipit sodales.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-        cubilia curae; Nam eros mi, tincidunt id nibh sed, sollicitudin porta
-        nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
-        Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
-        vel accumsan ex. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Etiam tempus dui orci, eget tincidunt augue semper eget. Aenean
-        commodo felis aliquam nisi dictum semper. Donec euismod ligula a ligula
-        faucibus pulvinar. Aliquam mollis semper tempor. Curabitur ac augue
-        magna. Aenean finibus velit eu eros aliquam lobortis. Nullam eget
-        pulvinar risus. In in aliquet magna. Pellentesque porta tempor nisl, eu
-        pellentesque orci dapibus eget. Donec laoreet congue iaculis. Nullam
-        cursus lorem quis pulvinar semper. Sed tincidunt dolor nisl, ut pretium
-        neque molestie non. In pellentesque ut purus nec pulvinar. Donec
-        volutpat purus in tellus semper, quis dapibus quam molestie. Nam libero
-        nisi, pulvinar et arcu id, auctor consequat magna. Vestibulum vehicula
-        elementum tincidunt. Cras rutrum purus a massa faucibus, vitae interdum
-        sapien imperdiet. Pellentesque at tellus et dolor ornare volutpat. Morbi
-        facilisis feugiat risus, in rutrum nibh sollicitudin vitae. Nullam mi
-        nulla, maximus vel tortor et, venenatis tempus risus. In congue dui
-        nisi, in elementum tellus vestibulum sagittis. Etiam molestie cursus
-        volutpat. Suspendisse malesuada ac leo et consectetur. Donec imperdiet
-        massa non porta pharetra. Duis lorem nisl, ultricies ac massa id,
-        hendrerit pretium lorem. Cras tristique, elit lacinia congue bibendum,
-        ipsum felis mattis libero, vel convallis quam tortor id felis. Etiam
-        imperdiet porta tellus, id sollicitudin nulla malesuada quis. Aenean
-        tempor turpis quis dui faucibus feugiat. Fusce sed pellentesque augue,
-        quis tempus lectus. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Sed molestie orci posuere dapibus cursus. Morbi eu tellus
-        nibh. Integer condimentum fermentum augue, sed feugiat nulla pharetra
-        et. Praesent a sagittis nulla, a congue tellus. Maecenas nec neque id
-        sapien pretium pulvinar. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nulla facilisi. Nulla facilisi. Donec vel elementum
-        diam, in ornare ligula. Donec facilisis convallis ex et pretium. Proin
-        nulla lorem, mattis sed vestibulum a, pharetra et enim. Vivamus
-        condimentum non ante et blandit. Vestibulum velit quam, efficitur non
-        velit eu, interdum elementum dolor. Quisque eu vestibulum nunc, a
-        interdum enim. Nulla laoreet egestas arcu. In rutrum felis lobortis
-        pellentesque faucibus. Maecenas lobortis quam a placerat dapibus. Sed
-        blandit eu ex ac varius. Morbi ultrices ut orci suscipit sodales.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-        cubilia curae; Nam eros mi, tincidunt id nibh sed, sollicitudin porta
-        nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
-        Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
-        vel accumsan ex.
+        In this example, the folder ID is highlighted in red:
+      </n-p>
+      <n-code
+        code="12QxxUY31XX9D2rwnVIJ-e56GApbi99NV"
+      />
+      <n-p>
+        Grab your ID and save it, you will need it later.
       </n-p>
       <n-p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus
-        dui orci, eget tincidunt augue semper eget. Aenean commodo felis aliquam
-        nisi dictum semper. Donec euismod ligula a ligula faucibus pulvinar.
-        Aliquam mollis semper tempor. Curabitur ac augue magna. Aenean finibus
-        velit eu eros aliquam lobortis. Nullam eget pulvinar risus. In in
-        aliquet magna. Pellentesque porta tempor nisl, eu pellentesque orci
-        dapibus eget. Donec laoreet congue iaculis. Nullam cursus lorem quis
-        pulvinar semper. Sed tincidunt dolor nisl, ut pretium neque molestie
-        non. In pellentesque ut purus nec pulvinar. Donec volutpat purus in
-        tellus semper, quis dapibus quam molestie. Nam libero nisi, pulvinar et
-        arcu id, auctor consequat magna. Vestibulum vehicula elementum
-        tincidunt. Cras rutrum purus a massa faucibus, vitae interdum sapien
-        imperdiet. Pellentesque at tellus et dolor ornare volutpat. Morbi
-        facilisis feugiat risus, in rutrum nibh sollicitudin vitae. Nullam mi
-        nulla, maximus vel tortor et, venenatis tempus risus. In congue dui
-        nisi, in elementum tellus vestibulum sagittis. Etiam molestie cursus
-        volutpat. Suspendisse malesuada ac leo et consectetur. Donec imperdiet
-        massa non porta pharetra. Duis lorem nisl, ultricies ac massa id,
-        hendrerit pretium lorem. Cras tristique, elit lacinia congue bibendum,
-        ipsum felis mattis libero, vel convallis quam tortor id felis. Etiam
-        imperdiet porta tellus, id sollicitudin nulla malesuada quis. Aenean
-        tempor turpis quis dui faucibus feugiat. Fusce sed pellentesque augue,
-        quis tempus lectus. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Sed molestie orci posuere dapibus cursus. Morbi eu tellus
-        nibh. Integer condimentum fermentum augue, sed feugiat nulla pharetra
-        et. Praesent a sagittis nulla, a congue tellus. Maecenas nec neque id
-        sapien pretium pulvinar. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nulla facilisi. Nulla facilisi. Donec vel elementum
-        diam, in ornare ligula. Donec facilisis convallis ex et pretium. Proin
-        nulla lorem, mattis sed vestibulum a, pharetra et enim. Vivamus
-        condimentum non ante et blandit. Vestibulum velit quam, efficitur non
-        velit eu, interdum elementum dolor. Quisque eu vestibulum nunc, a
-        interdum enim. Nulla laoreet egestas arcu. In rutrum felis lobortis
-        pellentesque faucibus. Maecenas lobortis quam a placerat dapibus. Sed
-        blandit eu ex ac varius. Morbi ultrices ut orci suscipit sodales.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-        cubilia curae; Nam eros mi, tincidunt id nibh sed, sollicitudin porta
-        nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
-        Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
-        vel accumsan ex. Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit. Etiam tempus dui orci, eget tincidunt augue semper eget. Aenean
-        commodo felis aliquam nisi dictum semper. Donec euismod ligula a ligula
-        faucibus pulvinar. Aliquam mollis semper tempor. Curabitur ac augue
-        magna. Aenean finibus velit eu eros aliquam lobortis. Nullam eget
-        pulvinar risus. In in aliquet magna. Pellentesque porta tempor nisl, eu
-        pellentesque orci dapibus eget. Donec laoreet congue iaculis. Nullam
-        cursus lorem quis pulvinar semper. Sed tincidunt dolor nisl, ut pretium
-        neque molestie non. In pellentesque ut purus nec pulvinar. Donec
-        volutpat purus in tellus semper, quis dapibus quam molestie. Nam libero
-        nisi, pulvinar et arcu id, auctor consequat magna. Vestibulum vehicula
-        elementum tincidunt. Cras rutrum purus a massa faucibus, vitae interdum
-        sapien imperdiet. Pellentesque at tellus et dolor ornare volutpat. Morbi
-        facilisis feugiat risus, in rutrum nibh sollicitudin vitae. Nullam mi
-        nulla, maximus vel tortor et, venenatis tempus risus. In congue dui
-        nisi, in elementum tellus vestibulum sagittis. Etiam molestie cursus
-        volutpat. Suspendisse malesuada ac leo et consectetur. Donec imperdiet
-        massa non porta pharetra. Duis lorem nisl, ultricies ac massa id,
-        hendrerit pretium lorem. Cras tristique, elit lacinia congue bibendum,
-        ipsum felis mattis libero, vel convallis quam tortor id felis. Etiam
-        imperdiet porta tellus, id sollicitudin nulla malesuada quis. Aenean
-        tempor turpis quis dui faucibus feugiat. Fusce sed pellentesque augue,
-        quis tempus lectus. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Sed molestie orci posuere dapibus cursus. Morbi eu tellus
-        nibh. Integer condimentum fermentum augue, sed feugiat nulla pharetra
-        et. Praesent a sagittis nulla, a congue tellus. Maecenas nec neque id
-        sapien pretium pulvinar. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nulla facilisi. Nulla facilisi. Donec vel elementum
-        diam, in ornare ligula. Donec facilisis convallis ex et pretium. Proin
-        nulla lorem, mattis sed vestibulum a, pharetra et enim. Vivamus
-        condimentum non ante et blandit. Vestibulum velit quam, efficitur non
-        velit eu, interdum elementum dolor. Quisque eu vestibulum nunc, a
-        interdum enim. Nulla laoreet egestas arcu. In rutrum felis lobortis
-        pellentesque faucibus. Maecenas lobortis quam a placerat dapibus. Sed
-        blandit eu ex ac varius. Morbi ultrices ut orci suscipit sodales.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-        cubilia curae; Nam eros mi, tincidunt id nibh sed, sollicitudin porta
-        nunc. Nullam posuere quam justo, non tincidunt enim condimentum ac.
-        Vivamus a nibh fermentum, gravida ex vitae, ullamcorper nulla. Quisque
-        vel accumsan ex.
+        Finally, upload inside this folder the “config.json” and “companies.json” created in the “General Settings” and “Companies and services” sections.
+      </n-p>
+      <n-h2>
+        Script setup
+      </n-h2>
+      <n-p>
+        All the spreadsheets are created automatically by a script execution, based on the two json files you created earlier and subsequently uploaded.
+      </n-p>
+      <n-h3>
+        Getting the code
+      </n-h3>
+      <n-p>
+        RDR developed all needed scripts for your research as a
+        <a href="https://www.google.com/script/start/" target="_blank">Google Apps Scripts project</a>.
+        This allows you to automatize the spreadsheets generation. To go to the project, visit:
+      </n-p>
+      <n-p>
+        <a href="https://script.google.com/d/1D-U42uZq7au4RKthZFkMF1q4INOQNNfY8bPTcqIZDLdynBu6IVQ8cBfo/edit?usp=sharing" target="_blank">
+          https://script.google.com/d/1D-U42uZq7au4RKthZFkMF1q4INOQNNfY8bPTcqIZDLdynBu6IVQ8cBfo/edit?usp=sharing
+        </a>
+      </n-p>
+      <n-image
+        :src="pic02"
+      />
+      <n-p>
+        Press the “copy” button on the left of the star icon at the upper-right corner of the screen. It will open a new browser tab with an editable copy of the project code.
+      </n-p>
+      <n-p>
+        Next, visit go to the “Code section” (Clicking on the “&lt;&gt;” icon on the left menu) and you will see the following:
+      </n-p>
+      <n-image
+        :src="pic03"
+      />
+      <n-p>
+        On line 3, add the folder ID you saved before. In this example, this line would be replaced by:
+      </n-p>
+      <n-code
+        code="return DriveApp.getFolderById('12QxxUY31XX9D2rwnVIJ-e56GApbi99NV')"
+      />
+      <n-p>
+        Click “Save.”
+      </n-p>
+      <n-image
+        :src="pic04"
+      />
+      <n-h2>
+        Running the code
+      </n-h2>
+      <n-p>
+        First, select the startProject function (1) and then run it (2).
+      </n-p>
+      <n-image
+        :src="pic05"
+      />
+      <n-p>
+        You will  now be creating the data collection sheets. Select the “mainInputSheets” function and run it. You will see the data collection sheets have now been created within the adaptation folder. You can move those files into a subfolder or rename them.
+      </n-p>
+      <n-p>
+        Do the same for the scoring sheets using the mainScoringSheets function. Lastly, create the summary using the mainSummarySheets function.
+      </n-p>
+      <n-h2>Note about Google Apps Script</n-h2>
+      <n-p>
+        Apps Script has limitations to its individual free Google accounts (you can check them
+        <a href="https://developers.google.com/apps-script/guides/services/quotas" target="_blank">here</a>). We therefore recommended that you use a workspace account.
       </n-p>
     </div>
   </n-layout-content>
 </template>
 
 <script setup lang="ts">
-import { NLayoutContent, NH1, NP } from 'naive-ui';
+import { NLayoutContent, NCode, NH1, NH2, NH3, NImage, NP } from 'naive-ui';
+import pic01 from '../assets/tutorial/01-drive-folder.png';
+import pic02 from '../assets/tutorial/02-project-overview.png';
+import pic03 from '../assets/tutorial/03-project-code.png';
+import pic04 from '../assets/tutorial/04-gas-toolbar.png';
+import pic05 from '../assets/tutorial/05-gas-run-png.png';
 </script>
 
 <style lang="scss"></style>
