@@ -8,13 +8,16 @@
     Fill in the Index Prefix, the short word or acronym that identifies your adaptation internally.
   </HelpStep>
   <HelpStep stepNumber="3">
-    Select the scoring steps that your adaptation will include. If there's just one researcher involved, 1 step should be fine. With two researchers, it is recommended to select all three steps.
+    Select the scoring steps that your adaptation will include. If there's just one researcher involved, 1 step should be fine. With two researchers, it is recommended to select all three steps.  If it's your first time doing an adaptation, make sure to read the guide on how to prepare your research.
   </HelpStep>
   <HelpStep stepNumber="4">
     Select at least one indicator. You can explore them by expanding the categories using the small arrow to the left of each listed category.
   </HelpStep>
   <HelpStep stepNumber="5">
-    Once you have defined the Index Prefix, scoring steps, and indicators, you can download the configuration file by clicking on “Download JSON.” Remember to save the file on your hard drive.
+    Once you have defined the Index Prefix, scoring steps, and indicators, you can download the configuration file by clicking on “Download JSON.” Remember to save the file on your device.
+  </HelpStep>
+  <HelpStep stepNumber="6">
+    You can continue the process by going to the “Companies and services” section to generate your second configuration file.
   </HelpStep>
   <br />
   <help-meanings :items="vocabulary" />
@@ -30,18 +33,18 @@ const vocabulary: Array<VocabularyItem> = [
   {
     name: 'Index Prefix',
     description:
-      'Required. This is an internal identifier for your research adaptation. You can concatenate your organization acronym with the current year.',
+      'This is your research adaptation’s internal identifier. For example, you can combine your organization’s acronym with the current year. This field is required.',
     example: 'RDR22',
   },
   {
     name: 'Scoring Steps',
     description:
-      'Currently, you can select between 1 and 3 research steps. At least one is required.',
+      'You can select between 1 and 3 research steps from our methodology to follow. At least one is required to proceed.',
   },
   {
     name: 'Indicators',
     description:
-      'Select the indicators your adaptation will use. At least one is required.',
+      'Select the indicators your adaptation will use. At least one indicator is required.',
   },
 ];
 </script>

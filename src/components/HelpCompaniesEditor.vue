@@ -2,7 +2,7 @@
   <n-h1>How to</n-h1>
   <!-- lorem ipsum -->
   <HelpStep stepNumber="1">
-    If you're creating a new file, jump to step 2. To continue editing an existing file, click on “Load JSON” and select it. Remember: Once you’ve finished editing it, you must redownload it.
+    If you're creating a new file, jump to step 2. To continue editing an existing file, click on "Load JSON" and select it. Remember: Once you’ve finished editing it, you must redownload it.
   </HelpStep>
   <HelpStep stepNumber="2">
     If you want to use a custom scheme for company identifiers generation, you can expand the “Company ID Settings” section and choose the desired ID generation method.
@@ -23,7 +23,10 @@
     Repeat steps from 3 to 6, until you’ve added all relevant companies.
   </HelpStep>
   <HelpStep stepNumber="8">
-    Once you’ve added all relevant companies and services, you can download the configuration file by clicking on “Download JSON.” Save the file on your hard drive.
+    Once you’ve added all relevant companies and services, you can download the configuration file by clicking on “Download JSON.” Save the file on your device.
+  </HelpStep>
+  <HelpStep stepNumber="9">
+    You can continue the process by going to the “Workspace setup” section, to generate the spreadsheets.
   </HelpStep>
   <br />
   <help-meanings :items="vocabulary" />
@@ -50,7 +53,7 @@ const vocabulary: Array<VocabularyItem> = [
   {
     name: 'Operating company',
     description:
-      'If you are evaluating a company’s subsidiary, add that name here. You can leave this field blank if there are no subsidiaries.',
+      'For internet platforms, leave this field blank because it does not apply. For telecommunication companies, leave it blank for telcos operating only at local level. If it’s a multinational company, add the name of the branch which operates locally here.',
   },
   {
     name: 'Type',

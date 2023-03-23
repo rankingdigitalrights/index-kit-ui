@@ -9,7 +9,7 @@
         Google Drive folder
       </n-h2>
       <n-p>
-        Go to Google Drive and create a new folder. Inside of this folder you will create all your data collection and scoring sheets. When you have your folder ready, do right click on it and select “Get link.”
+        Go to Google Drive and create a new folder. Inside of this folder you will create all your data collection and scoring sheets. When you have your folder ready, right click on it and select “Get link.”
       </n-p>
       <n-image
         :src="pic01"
@@ -30,21 +30,38 @@
         Grab your ID and save it, you will need it later.
       </n-p>
       <n-p>
-        Finally, upload inside this folder the “config.json” and “companies.json” created in the “General Settings” and “Companies and services” sections.
+        Finally, upload inside this folder the “config.json” and “companies.json” files created in the “General Settings” and “Companies and services” sections.
       </n-p>
       <n-h2>
         Script setup
       </n-h2>
       <n-p>
-        All the spreadsheets are created automatically by a script execution, based on the two json files you created earlier and subsequently uploaded.
+        All the spreadsheets are created automatically by running a script, based on the two json files you created earlier and subsequently uploaded.
       </n-p>
+      <n-h3>
+        Spreadsheet types description
+      </n-h3>
+      <n-p>
+        There are three types of spreadsheets involved in the research process:
+      </n-p>
+      <ul>
+        <li>
+          Data collection sheets: Researchers work on these spreadsheets filling them based on the results they get from the company's policies.
+        </li>
+        <li>
+          Scoring sheets: They get data filled on the Data collection sheets and calculate scores for every indicator.
+        </li>
+        <li>
+          Summary sheets: They have all scores from a complete step. These are used to analyze the results of the research.
+        </li>
+      </ul>
       <n-h3>
         Getting the code
       </n-h3>
       <n-p>
         RDR developed all needed scripts for your research as a
-        <a href="https://www.google.com/script/start/" target="_blank">Google Apps Scripts project</a>.
-        This allows you to automatize the spreadsheets generation. To go to the project, visit:
+        <a href="https://www.google.com/script/start/" target="_blank">Google Apps Scripts</a>
+        project. This allows you to automate the spreadsheets generation. To go to the project, visit:
       </n-p>
       <n-p>
         <a href="https://script.google.com/d/1D-U42uZq7au4RKthZFkMF1q4INOQNNfY8bPTcqIZDLdynBu6IVQ8cBfo/edit?usp=sharing" target="_blank">
@@ -55,7 +72,7 @@
         :src="pic02"
       />
       <n-p>
-        Press the “copy” button on the left of the star icon at the upper-right corner of the screen. It will open a new browser tab with an editable copy of the project code.
+        Press the “copy” button (an icon in the shape of two sheets of paper) on the left of the star icon at the upper-right corner of the screen. It will open a new browser tab with an editable copy of the project code.
       </n-p>
       <n-p>
         Next, visit go to the “Code section” (Clicking on the “&lt;&gt;” icon on the left menu) and you will see the following:
@@ -85,15 +102,18 @@
         :src="pic05"
       />
       <n-p>
-        You will  now be creating the data collection sheets. Select the “mainInputSheets” function and run it. You will see the data collection sheets have now been created within the adaptation folder. You can move those files into a subfolder or rename them.
+        You will now be creating the data collection sheets. Select the “mainInputSheets” function and run it. You will see the data collection sheets have now been created within the adaptation folder. You can move those files into a subfolder or rename them.
       </n-p>
       <n-p>
-        Do the same for the scoring sheets using the mainScoringSheets function. Lastly, create the summary using the mainSummarySheets function.
+        Do the same for the scoring sheets using the mainScoringSheets function.
+      </n-p>
+      <n-p>
+        Lastly, create the summary using the mainSummarySheets function.
       </n-p>
       <n-h2>Note about Google Apps Script</n-h2>
       <n-p>
         Apps Script has limitations to its individual free Google accounts (you can check them
-        <a href="https://developers.google.com/apps-script/guides/services/quotas" target="_blank">here</a>). We therefore recommended that you use a workspace account.
+        <a href="https://developers.google.com/apps-script/guides/services/quotas" target="_blank">here</a>). We therefore recommended that you use a workspace account. However, a normal gmail account should be enough to create an adaptation project with a small number of companies and indicators.
       </n-p>
     </div>
   </n-layout-content>

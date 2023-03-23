@@ -10,8 +10,8 @@ const props = defineProps<{
 
 <template>
   <n-card embedded>
-    <n-collapse>
-      <n-collapse-item>
+    <n-collapse default-expanded-names="1">
+      <n-collapse-item name="1">
         <template #header>
           <n-h3 style="margin: 0">What it means</n-h3>
         </template>

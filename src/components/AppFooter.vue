@@ -4,7 +4,7 @@
       <n-grid x-gap="12" :cols="isMobile ? 1 : 2" style="height: 100%">
         <n-gi class="grid-item">
           <div>
-            <a href="https://google.com" target="_blank">Privacy policy</a>
+            <a href="https://rankingdigitalrights.org/research-lab/" target="_blank">RDR Research Lab</a>
             <br />
             <p>
               <a href="https://twitter.com/rankingrights" target="_blank">
