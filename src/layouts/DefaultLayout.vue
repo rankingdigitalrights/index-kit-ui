@@ -2,12 +2,14 @@
   <n-layout-header v-if="isMobile" class="sticky-header">
     <div class="layout-header">
       <n-space align="center" justify="space-between" :wrap-item="false">
-        <n-image
-          :src="props.isDarkModeActive ? logoInvertedImg : logoImg"
-          height="30"
-          preview-disabled
-          @click="goToHome"
-        />
+        <a href="https://rankingdigitalrights.org/research-lab/" target="_blank">
+          <n-image
+            :src="props.isDarkModeActive ? logoInvertedImg : logoImg"
+            height="30"
+            preview-disabled
+            @click="goToHome"
+          />
+        </a>
         <n-dropdown
           trigger="click"
           placement="right"
@@ -27,11 +29,13 @@
     <n-layout has-sider class="layout-top">
       <n-layout-sider class="hidden-mobile">
         <n-space align="center" justify="space-between" class="sidebar-logo">
-          <n-image
-            :src="props.isDarkModeActive ? logoInvertedImg : logoImg"
-            height="60"
-            preview-disabled
-          />
+          <a href="https://rankingdigitalrights.org/research-lab/" target="_blank">
+            <n-image
+              :src="props.isDarkModeActive ? logoInvertedImg : logoImg"
+              height="60"
+              preview-disabled
+            />
+          </a>
         </n-space>
         <n-menu :options="menuOptions" />
       </n-layout-sider>

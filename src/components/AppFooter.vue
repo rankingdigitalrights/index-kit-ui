@@ -37,12 +37,14 @@
           </div>
         </n-gi>
         <n-gi class="grid-item right">
-          <n-image
-            :src="logoInvertedImg"
-            height="60"
-            class="rdr-logo-footer"
-            preview-disabled
-          />
+          <a href="https://rankingdigitalrights.org/" target="_blank">
+            <n-image
+              :src="logoInvertedImg"
+              height="60"
+              class="rdr-logo-footer"
+              preview-disabled
+            />
+          </a>
         </n-gi>
       </n-grid>
     </div>
