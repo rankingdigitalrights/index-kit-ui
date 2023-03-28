@@ -1,8 +1,8 @@
-# scorecard-kit-ui
+# scorecard-toolkit-ui
 
 This template should help get you started developing with Vue 3 in Vite.
 
-## How to update RDR Scorecard Kit indicators for Ranking editor
+## How to update RDR Scorecard Toolkit indicators for Ranking editor
 
 Update the `indicators.json` file in the `public/data` folder.
 

@@ -5,7 +5,7 @@ import { NLayoutContent, NH1, NP } from 'naive-ui';
 <template>
   <n-layout-content :native-scrollbar="false" class="main-content" width="55%">
     <div class="section-content">
-      <n-h1> RDR Scorecard Kit UI </n-h1>
+      <n-h1> RDR Scorecard Toolkit UI </n-h1>
       <n-p>
         The RDR Index Scorecard UI is a web tool created to assist independent researchers and organizations in generating the configuration files needed to deploy the infrastructure to manage the data for an adaptation project of the RDR Corporate Accountability methodology.
       </n-p>

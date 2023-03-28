@@ -1,7 +1,7 @@
 {
-  "name": "rdr-scorecard-kit",
+  "name": "rdr-scorecard-toolkit",
   "version": "1.0.0",
-  "description": "RDR Scorecard Kit - A user interface to start your own ranking adaptation ",
+  "description": "RDR Scorecard Toolkit - A user interface to start your own ranking adaptation ",
   "homepage": "https://github.com/rankingdigitalrights/index-kit-ui",
   "private": true,
   "maintainers": [
