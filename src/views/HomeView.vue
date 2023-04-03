@@ -7,7 +7,7 @@ import { NLayoutContent, NH1, NP } from 'naive-ui';
     <div class="section-content">
       <n-h1> RDR Scorecard Toolkit</n-h1>
       <n-p>
-        The RDR Index Scorecard UI is a web tool created to assist independent researchers and organizations in generating the configuration files needed to deploy the infrastructure to manage the data for an adaptation project of the RDR Corporate Accountability methodology.
+        The RDR Scorecard Toolkit is a web tool created to assist independent researchers and organizations in generating the configuration files needed to deploy the infrastructure to manage the data for an adaptation project of the RDR Corporate Accountability methodology.
       </n-p>
       <n-p>
         This tool will help you produce the two configuration files needed to create all of your adaptation spreadsheets, customized according to your project's scope.

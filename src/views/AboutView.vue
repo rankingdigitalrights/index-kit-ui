@@ -3,7 +3,7 @@
     <div class="section-content">
       <n-h1>Workspace setup</n-h1>
       <n-p>
-        Now that you’ve created all of your configuration files, you need to ensure  you have somewhere to store all of this data and where all data collection spreadsheets will be generated. You will need a Google account to use the following required tools: Google Drive and Google Apps Scripts.
+        Now that you have created all of your configuration files, you need to ensure  you have somewhere to store all of this data and where all data collection spreadsheets will be generated. You will need a Google account to use the following required tools: Google Drive and Google Apps Scripts.
       </n-p>
       <n-h2>
         Google Drive folder
@@ -11,9 +11,15 @@
       <n-p>
         Go to Google Drive and create a new folder. Inside of this folder you will create all your data collection and scoring sheets. When you have your folder ready, right click on it and select “Get link.”
       </n-p>
-      <n-image
+      <n-grid cols="1" item-responsive responsive="screen">
+      <n-grid-item span="0 m:1 l:2">
+      <div class="pic01">
+      <n-image 
         :src="pic01"
       />
+      </div>
+      </n-grid-item>
+      </n-grid>
       <n-p>
         You will see a link like this:
       </n-p>
@@ -68,18 +74,30 @@
           https://script.google.com/d/1D-U42uZq7au4RKthZFkMF1q4INOQNNfY8bPTcqIZDLdynBu6IVQ8cBfo/edit?usp=sharing
         </a>
       </n-p>
+      <n-grid cols="4" item-responsive responsive="screen">
+      <n-grid-item span="0 m:1 l:2">
+      <div class="pic02">
       <n-image
         :src="pic02"
       />
+      </div>
+      </n-grid-item>
+      </n-grid>
       <n-p>
         Press the “copy” button (an icon in the shape of two sheets of paper) on the left of the star icon at the upper-right corner of the screen. It will open a new browser tab with an editable copy of the project code.
       </n-p>
       <n-p>
-        Next, visit go to the “Code section” (Clicking on the “&lt;&gt;” icon on the left menu) and you will see the following:
+        Next,  go to the “Code section” (Clicking on the “&lt;&gt;” icon on the left menu) and you will see the following:
       </n-p>
-      <n-image
-        :src="pic03"
-      />
+      <n-grid cols="1" item-responsive responsive="screen">
+      <n-grid-item span="0 m:1 l:2">
+        <div class="pic03">
+        <n-image
+          :src="pic03"
+        />
+        </div>
+      </n-grid-item>
+      </n-grid>
       <n-p>
         On line 3, add the folder ID you saved before. In this example, this line would be replaced by:
       </n-p>
@@ -89,18 +107,30 @@
       <n-p>
         Click “Save.”
       </n-p>
-      <n-image
-        :src="pic04"
-      />
+      <n-grid cols="2" item-responsive responsive="screen">
+      <n-grid-item span="0 m:1 l:2">
+        <div class="pic04">
+        <n-image 
+          :src="pic04"
+          />
+        </div>
+      </n-grid-item>
+      </n-grid>
       <n-h2>
         Running the code
       </n-h2>
       <n-p>
         First, select the startProject function (1) and then run it (2).
       </n-p>
+      <n-grid cols="2" item-responsive responsive="screen">
+        <n-grid-item span="0 m:1 l:2">
+          <div class="pic05">
       <n-image
         :src="pic05"
       />
+          </div>
+        </n-grid-item>
+      </n-grid>
       <n-p>
         You will now be creating the data collection sheets. Select the “mainInputSheets” function and run it. You will see the data collection sheets have now been created within the adaptation folder. You can move those files into a subfolder or rename them.
       </n-p>
@@ -128,4 +158,35 @@ import pic04 from '../assets/tutorial/04-gas-toolbar.png';
 import pic05 from '../assets/tutorial/05-gas-run-png.png';
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+.pic01 {
+  display: flex;
+  align-items: left;
+  height:auto;
+  width: 35cqmin;
+}
+.pic02 {
+  display: flex;
+  align-items: left;
+  height:23cqmax;
+  width: auto;
+}
+.pic03 {
+  display: flex;
+  align-items: left;
+  height:23cqmax;
+  width: auto;
+  }
+.pic04 {
+  display: flex;
+  align-items: left;
+  width:20cqmax;
+  }
+.pic05 {
+  display: flex;
+  align-items: left;
+  max-height:500px;
+  width: auto;
+  }
+</style>
